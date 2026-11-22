@@ -1,0 +1,76 @@
+\section{Introduction}\label{introduction}
+
+Zero-trust architecture separates the decision to grant access from its enforcement \citep{r2}. In network hiding and single-packet authorization, a client first requests access through a control message called a knock. It then opens a separate application connection to use the resource \citep{r1,r13}. Temporary rules can remain active across multiple knocks for the same resource. A successful connection may therefore use a rule installed before the latest knock. Determining which request opened access matters for reconstructing incidents, investigating unauthorized access, and reviewing permissions.
+
+Two OpenNHP traces show why the application response is insufficient. In the archived trace, the receiver discarded a duplicate knock. The client still received HTTP 200 on a fresh connection while an earlier admission could explain its access. In the other trace, a probe failed after the previous rule expired, although the service remained healthy. A fresh connection received HTTP 200 after another request triggered a rule write. The HTTP response was the same in both traces. In one, prior admission could explain it. In the other, the evidence supported newly established admission. The knock, write, and connection leave records in different components, with timestamps that can be difficult to align and events that may go unrecorded. We ask whether a specified knock established new admission to a protected resource when the records are incomplete and several requests could account for the same write.
+
+Three lines of work provide evidence for this judgment. Distributed tracing uses timestamps, method-level delays, and explicit context to associate events \citep{r3,r4}. Access-control testing compares behavior with policy oracles, and stateful protocol testing explores reachable states \citep{r5,r6,r7,r8}. A reconstructed trace or a set of test outcomes leaves open whether the specified request succeeds under other associations consistent with the observations. Network verification and data-plane monitoring check rules, reachability, and enforcement, including middlebox bypass and silent packet drops \citep{r9,r10,r11}. Studies of software-defined networking (SDN) also characterize the attack surfaces of the control and data planes \citep{r12}. A reachability check identifies the state observed at the resource. Attributing that state to a given knock requires linking it to the responsible write and ruling out competing writes.
+
+Our method begins with the target request's outcome. If the target has a successful action in every compatible explanation, success is necessary. If at least one compatible explanation allows it, success is possible. In the first stage (Section 3.2), a candidate graph represents possible sources as edges and observed outcomes as labels. Coverage of request and action records governs which missing events the model permits, and a per-request capacity condition bounds how many action bundles a request can account for. If all observed bundles can still be assigned after removing the known-success edges to the target, that assignment supports an explanation with no successful target action. A feasible assignment that forces an edge whose outcome permits success, or reserves capacity for an unrecorded success when action coverage is unconfirmed, provides a witness for possible success. With unit capacity, feasibility reduces to bipartite matching. The resulting whole-graph constraints can settle outcomes that local propagation leaves unresolved. In the second stage (Section 3.3), seven predicates check the rule and probe observations around the write, including service health and a fresh application connection. A final feasibility check tests for another successful write to the same resource. The two stages yield separate verdicts for operation success and newly established admission.
+
+The paper makes three contributions.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{A request-level test for operation success.} We specify a candidate graph, two record-coverage conditions, and a per-request capacity condition. We prove that feasibility queries implement the necessary- and possible-success semantics and identify structures in which capacity yields additional verdicts over local propagation.
+\item
+  \textbf{An admission criterion linking rule writes to resource state.} The criterion combines a successful target action with rule-lifecycle observations, a fresh independent connection, and a check for competing writes. It can report operation success when the observations leave the admission outcome unresolved.
+\item
+  \textbf{An empirical evaluation in OpenNHP.} Paired views of native runs isolate the effects of ambiguous sources, missing records, and lifecycle evidence. Sealed instances identify the structures in which capacity constraints yield additional verdicts. Evidence ablations identify observations that support the verdicts, and comparisons using the same instrumented build measure collection overhead.
+\end{enumerate}
+
+Section 2 reviews related work. Section 3 presents the method, Section 4 evaluates it, Section 5 discusses its scope, and Section 6 concludes.
+
+\section{Related work}\label{related-work}
+
+\subsection{Temporary admission mechanisms and observation points}\label{temporary-admission-mechanisms-and-observation-points}
+
+Single-packet authorization authenticates a knock before opening access to a protected service \citep{r13}. Advanced Network-Hiding Access Control (AHAC) assigns knock processing, policy decisions, and rule enforcement to separate components \citep{r1}. SDP-FW accounts for authorization expiry and the state of existing connections \citep{r14}. Other dynamic admission mechanisms incorporate the security posture of users and devices or strengthen authorization processing at the controller \citep{r15,r16}. Related applications include cross-border authentication, traffic scheduling, and traffic control \citep{r17,r18,r19}. These studies describe how and when access opens within a deployment. The division of responsibilities also determines what can be observed: knock processing and authorization on the control plane, rule writes at the access controller, and reachability on the data plane or through an independent probe. Establishing which request wrote a rule and whether that write admitted a new connection requires linking these observations.
+
+\subsection{Source association and target outcomes}\label{source-association-and-target-outcomes}
+
+Determining whether the target triggered an action requires evidence about its source. Event ordering constrains cross-component associations, and propagated context can identify parent--child calls \citep{r20,r21}. TraceWeaver uses request and response timestamps to narrow down possible associations. FlowScope also uses delay distributions for method pairs and constraints across calls \citep{r3,r4}. Both aim to reconstruct a trace. If several assignments fit the records, the attribution question is whether the target outcome stays the same across them. A single reconstruction leaves that question open.
+
+Access-control testing compares observed behavior with an expected outcome. Role-based conformance testing derives cases from role state, and formal policy languages specify how rules are evaluated \citep{r5,r22}. Transforming request conditions or applying metamorphic relations can test a security constraint across executions \citep{r7,r23}. Web security studies use protected operations and policy invariants to assess authorization failures and repairs \citep{r24,r25,r26}. Stateful protocol testing explores message histories, using responses to infer states or snapshots to return to previously discovered states \citep{r6,r8,r27}. These approaches identify departures from expected behavior. In temporary admission, the transition from unreachable before a rule write to reachable afterward can itself be expected. As the software testing oracle problem suggests, execution observations need an interpretation before they can support a verdict \citep{r28}. Here, the interpretation depends on which request accounts for the write and whether other writers could explain the observed transition.
+
+\subsection{State verification and competing sources}\label{state-verification-and-competing-sources}
+
+Network verification extends analysis to enforcement. Default deny and complete mediation provide design principles, and studies of SDN attacks and defenses locate risks at control and forwarding interfaces \citep{r12,r29}. Runtime observations can check middlebox paths and consistency between controllers and end systems \citep{r10,r30}. Configuration verification examines invariants during updates, affected endpoints, and policy interference. It can also account for forwarding state changed by earlier traffic \citep{r9,r31,r32,r33,r34}. Data-plane monitoring collects traffic summaries, reconstructs per-hop packet histories, and locates anomalous paths or silent drops \citep{r11,r35,r36,r37}.
+
+A resource may be reachable during the observation window because of the target's write, a rule already in effect, or a write by another request. Each explanation fits a single observation of reachability. Assigning the change to a specified request requires comparing resource states before and after the write and testing for competing writes. Existing techniques provide evidence and invariants for these checks.
+
+Table~\ref{tab:1} compares what each approach establishes about a particular request. The evaluation unit in this work is the specified request. We draw on certain-answer semantics to quantify over compatible explanations \citep{r38}. This preserves a target verdict when its precise association remains ambiguous. The two-stage criterion distinguishes operation success from newly established admission and accounts for unobserved sources, unobserved actions, and per-request capacity.
+
+\begin{table*}[tbp]
+
+\centering\small
+
+\caption{Evidence, conclusions, and corresponding attribution stages.}\label{tab:1}
+
+\begin{tabularx}{\textwidth}{@{}p{.15\textwidth}XXXp{.075\textwidth}@{}}
+
+\toprule
+
+\textbf{Approach} & \textbf{Evidence} & \textbf{Conclusion} & \textbf{Open attribution question} & \textbf{Section} \\
+
+\midrule
+
+Mechanisms and protocols \citep{r1,r14,r16} & Message sequences and component responsibilities & How access opens and when it expires & Which individual request caused the write? & 3.1 \\
+
+Trace reconstruction \citep{r3,r4} & Call chains, timestamps, and delay distributions & A likely trace or ranked candidates & Does the target outcome hold across compatible assignments? & 3.2 \\
+
+Testing and oracles \citep{r5,r6,r7} & Rule semantics and expected behavior & Test outcomes, counterexamples, or repairs & Which request produced the observed effect? & 3.2 \\
+
+State verification \citep{r9,r11,r32} & Rule views, update sequences, and probes & Invariant satisfaction or reachability & Which write produced the observed state? & 3.3 \\
+
+This work & Candidate assignments, paired resource states, and checks for competing writes & Necessary and possible success, plus five execution outcomes & --- & 3.2--3.3 \\
+
+\bottomrule
+
+\end{tabularx}
+
+\end{table*}
+
+

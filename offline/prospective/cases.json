@@ -1,0 +1,3460 @@
+{
+  "H01": {
+    "expected": {
+      "authorization": "CONFLICT",
+      "effect": "CONFLICT",
+      "may_success": null,
+      "must_success": null,
+      "processing": "CONFLICT",
+      "status": "CONFLICT"
+    },
+    "frozen_input_sha256": "bb1e52334a93ddf69e3f1aa6a3a573f3766c04d63ecf55772818533037aac1ea",
+    "input": {
+      "actions": [
+        {
+          "candidates": [
+            "r-0a67ba97d385fb82",
+            "r-77476cf121e53c96"
+          ],
+          "coarse_candidates": [
+            "r-09dd04e4b2601385",
+            "r-0a67ba97d385fb82",
+            "r-6e25fce7c09563cd",
+            "r-77476cf121e53c96"
+          ],
+          "hard_parent": false,
+          "id": "a-193891144a3c33c5",
+          "resource": "svc-fixture",
+          "success": true
+        },
+        {
+          "candidates": [
+            "r-09dd04e4b2601385",
+            "r-6e25fce7c09563cd"
+          ],
+          "coarse_candidates": [
+            "r-09dd04e4b2601385",
+            "r-0a67ba97d385fb82",
+            "r-6e25fce7c09563cd",
+            "r-77476cf121e53c96"
+          ],
+          "hard_parent": false,
+          "id": "a-4f813943cc21713c",
+          "resource": "svc-fixture",
+          "success": null
+        },
+        {
+          "candidates": [
+            "r-09dd04e4b2601385",
+            "r-6e25fce7c09563cd"
+          ],
+          "coarse_candidates": [
+            "r-09dd04e4b2601385",
+            "r-0a67ba97d385fb82",
+            "r-6e25fce7c09563cd",
+            "r-77476cf121e53c96"
+          ],
+          "hard_parent": false,
+          "id": "a-86c8e3d65b768e9e",
+          "resource": "svc-fixture",
+          "success": null
+        },
+        {
+          "candidates": [
+            "r-09dd04e4b2601385",
+            "r-6e25fce7c09563cd"
+          ],
+          "coarse_candidates": [
+            "r-09dd04e4b2601385",
+            "r-0a67ba97d385fb82",
+            "r-6e25fce7c09563cd",
+            "r-77476cf121e53c96"
+          ],
+          "hard_parent": false,
+          "id": "a-d21168b22c5b5c08",
+          "resource": "svc-fixture",
+          "success": null
+        }
+      ],
+      "contract": {
+        "actions_complete": true,
+        "basis": "fixture_verified",
+        "owners_complete": true,
+        "single_action_per_request": true
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": true,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": true,
+        "order_ok": true,
+        "rule_empty": true,
+        "tcp_failed": true
+      },
+      "query": "r-77476cf121e53c96",
+      "requests": [
+        {
+          "id": "r-0a67ba97d385fb82",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-77476cf121e53c96",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-09dd04e4b2601385",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-6e25fce7c09563cd",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        }
+      ],
+      "requirement": {
+        "allows_target": true,
+        "applicable": true,
+        "kind": "fixture",
+        "source": "fixture:declared-rule"
+      }
+    }
+  },
+  "H02": {
+    "expected": {
+      "authorization": "UNKNOWN",
+      "effect": "UNKNOWN",
+      "may_success": true,
+      "must_success": false,
+      "processing": "CONSUMED",
+      "status": "OK"
+    },
+    "frozen_input_sha256": "28c0f503a5a596c307b263919eabf88448cdbfa1d7e8753a68e8d60ad9dc6219",
+    "input": {
+      "actions": [
+        {
+          "candidates": [
+            "r-02e459383963d415",
+            "r-494d9bb20b237dc4"
+          ],
+          "coarse_candidates": [
+            "r-02e459383963d415",
+            "r-494d9bb20b237dc4",
+            "r-63d9c661c35c735f",
+            "r-64d82d40617c6dec",
+            "r-c95f9c915d29dfff",
+            "r-f82357392e0d3536"
+          ],
+          "hard_parent": false,
+          "id": "a-474b994bc1082312",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-63d9c661c35c735f",
+            "r-c95f9c915d29dfff"
+          ],
+          "coarse_candidates": [
+            "r-02e459383963d415",
+            "r-494d9bb20b237dc4",
+            "r-63d9c661c35c735f",
+            "r-64d82d40617c6dec",
+            "r-c95f9c915d29dfff",
+            "r-f82357392e0d3536"
+          ],
+          "hard_parent": false,
+          "id": "a-7b6247768f7bcac9",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-64d82d40617c6dec",
+            "r-f82357392e0d3536"
+          ],
+          "coarse_candidates": [
+            "r-02e459383963d415",
+            "r-494d9bb20b237dc4",
+            "r-63d9c661c35c735f",
+            "r-64d82d40617c6dec",
+            "r-c95f9c915d29dfff",
+            "r-f82357392e0d3536"
+          ],
+          "hard_parent": false,
+          "id": "a-f14d8b96b584f173",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-494d9bb20b237dc4",
+            "r-63d9c661c35c735f"
+          ],
+          "coarse_candidates": [
+            "r-02e459383963d415",
+            "r-494d9bb20b237dc4",
+            "r-63d9c661c35c735f",
+            "r-64d82d40617c6dec",
+            "r-c95f9c915d29dfff",
+            "r-f82357392e0d3536"
+          ],
+          "hard_parent": false,
+          "id": "a-f52548c58b5ad2e3",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-02e459383963d415",
+            "r-f82357392e0d3536"
+          ],
+          "coarse_candidates": [
+            "r-02e459383963d415",
+            "r-494d9bb20b237dc4",
+            "r-63d9c661c35c735f",
+            "r-64d82d40617c6dec",
+            "r-c95f9c915d29dfff",
+            "r-f82357392e0d3536"
+          ],
+          "hard_parent": false,
+          "id": "a-60dfde90c7a82de0",
+          "resource": "svc-fixture",
+          "success": true
+        },
+        {
+          "candidates": [
+            "r-64d82d40617c6dec",
+            "r-c95f9c915d29dfff"
+          ],
+          "coarse_candidates": [
+            "r-02e459383963d415",
+            "r-494d9bb20b237dc4",
+            "r-63d9c661c35c735f",
+            "r-64d82d40617c6dec",
+            "r-c95f9c915d29dfff",
+            "r-f82357392e0d3536"
+          ],
+          "hard_parent": false,
+          "id": "a-8010819918197352",
+          "resource": "svc-fixture",
+          "success": false
+        }
+      ],
+      "contract": {
+        "actions_complete": true,
+        "basis": "fixture_verified",
+        "owners_complete": true,
+        "single_action_per_request": true
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": true,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": true,
+        "order_ok": true,
+        "rule_empty": true,
+        "tcp_failed": true
+      },
+      "query": "r-f82357392e0d3536",
+      "requests": [
+        {
+          "id": "r-f82357392e0d3536",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-c95f9c915d29dfff",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-02e459383963d415",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-494d9bb20b237dc4",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-63d9c661c35c735f",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-64d82d40617c6dec",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        }
+      ],
+      "requirement": {
+        "allows_target": true,
+        "applicable": true,
+        "kind": "fixture",
+        "source": "fixture:declared-rule"
+      }
+    }
+  },
+  "H03": {
+    "expected": {
+      "authorization": "CONFORMS",
+      "effect": "ACTION_ONLY",
+      "may_success": true,
+      "must_success": true,
+      "processing": "CONSUMED",
+      "status": "OK"
+    },
+    "frozen_input_sha256": "0d8b6a1f7a44cbb02d09082e02546d5021f8822e99770002d0a18a9f4aeab347",
+    "input": {
+      "actions": [
+        {
+          "candidates": [
+            "r-806c8ce57b773643",
+            "r-f2359ffed723aeb0"
+          ],
+          "coarse_candidates": [
+            "r-091c1673b9a5ec45",
+            "r-2b091d54ff9f8eeb",
+            "r-395a64daafceb276",
+            "r-806c8ce57b773643",
+            "r-cc3db522787555bd",
+            "r-f2359ffed723aeb0"
+          ],
+          "hard_parent": false,
+          "id": "a-fa2bce533739c5f5",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-2b091d54ff9f8eeb",
+            "r-395a64daafceb276"
+          ],
+          "coarse_candidates": [
+            "r-091c1673b9a5ec45",
+            "r-2b091d54ff9f8eeb",
+            "r-395a64daafceb276",
+            "r-806c8ce57b773643",
+            "r-cc3db522787555bd",
+            "r-f2359ffed723aeb0"
+          ],
+          "hard_parent": false,
+          "id": "a-d18c82ae43f69e1d",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-2b091d54ff9f8eeb",
+            "r-cc3db522787555bd"
+          ],
+          "coarse_candidates": [
+            "r-091c1673b9a5ec45",
+            "r-2b091d54ff9f8eeb",
+            "r-395a64daafceb276",
+            "r-806c8ce57b773643",
+            "r-cc3db522787555bd",
+            "r-f2359ffed723aeb0"
+          ],
+          "hard_parent": false,
+          "id": "a-4f873b19c4d90e10",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-091c1673b9a5ec45"
+          ],
+          "coarse_candidates": [
+            "r-091c1673b9a5ec45",
+            "r-2b091d54ff9f8eeb",
+            "r-395a64daafceb276",
+            "r-806c8ce57b773643",
+            "r-cc3db522787555bd",
+            "r-f2359ffed723aeb0"
+          ],
+          "hard_parent": true,
+          "id": "a-5d8756cf6626728d",
+          "resource": "svc-fixture",
+          "success": true
+        },
+        {
+          "candidates": [
+            "r-395a64daafceb276",
+            "r-f2359ffed723aeb0"
+          ],
+          "coarse_candidates": [
+            "r-091c1673b9a5ec45",
+            "r-2b091d54ff9f8eeb",
+            "r-395a64daafceb276",
+            "r-806c8ce57b773643",
+            "r-cc3db522787555bd",
+            "r-f2359ffed723aeb0"
+          ],
+          "hard_parent": false,
+          "id": "a-1e2cca5f130610a7",
+          "resource": "svc-fixture",
+          "success": false
+        }
+      ],
+      "contract": {
+        "actions_complete": true,
+        "basis": "fixture_verified",
+        "owners_complete": true,
+        "single_action_per_request": true
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": true,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": true,
+        "order_ok": true,
+        "rule_empty": null,
+        "tcp_failed": true
+      },
+      "query": "r-091c1673b9a5ec45",
+      "requests": [
+        {
+          "id": "r-806c8ce57b773643",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-cc3db522787555bd",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-395a64daafceb276",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-091c1673b9a5ec45",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-2b091d54ff9f8eeb",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-f2359ffed723aeb0",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        }
+      ],
+      "requirement": {
+        "allows_target": true,
+        "applicable": true,
+        "kind": "fixture",
+        "source": "fixture:declared-rule"
+      }
+    }
+  },
+  "H04": {
+    "expected": {
+      "authorization": "UNKNOWN",
+      "effect": "UNKNOWN",
+      "may_success": true,
+      "must_success": false,
+      "processing": "CONSUMED",
+      "status": "OK"
+    },
+    "frozen_input_sha256": "f34bc0152a03b091bb4f81652328c33eb0d54d1ad2646aca6e0bed95c061a189",
+    "input": {
+      "actions": [
+        {
+          "candidates": [
+            "r-467ac0164b580c91",
+            "r-76bec329f7061fbe"
+          ],
+          "coarse_candidates": [
+            "r-0bf44922e27db950",
+            "r-40a6b86e180bc358",
+            "r-467ac0164b580c91",
+            "r-76bec329f7061fbe",
+            "r-f4769cda755997af"
+          ],
+          "hard_parent": false,
+          "id": "a-f23ff0b430a6492f",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-40a6b86e180bc358",
+            "r-f4769cda755997af"
+          ],
+          "coarse_candidates": [
+            "r-0bf44922e27db950",
+            "r-40a6b86e180bc358",
+            "r-467ac0164b580c91",
+            "r-76bec329f7061fbe",
+            "r-f4769cda755997af"
+          ],
+          "hard_parent": false,
+          "id": "a-b9d2643276065b28",
+          "resource": "svc-fixture",
+          "success": true
+        },
+        {
+          "candidates": [
+            "r-0bf44922e27db950",
+            "r-40a6b86e180bc358"
+          ],
+          "coarse_candidates": [
+            "r-0bf44922e27db950",
+            "r-40a6b86e180bc358",
+            "r-467ac0164b580c91",
+            "r-76bec329f7061fbe",
+            "r-f4769cda755997af"
+          ],
+          "hard_parent": false,
+          "id": "a-87ed43dcd9ff5414",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-76bec329f7061fbe",
+            "r-f4769cda755997af"
+          ],
+          "coarse_candidates": [
+            "r-0bf44922e27db950",
+            "r-40a6b86e180bc358",
+            "r-467ac0164b580c91",
+            "r-76bec329f7061fbe",
+            "r-f4769cda755997af"
+          ],
+          "hard_parent": false,
+          "id": "a-44b7069330eee4ed",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-0bf44922e27db950",
+            "r-467ac0164b580c91"
+          ],
+          "coarse_candidates": [
+            "r-0bf44922e27db950",
+            "r-40a6b86e180bc358",
+            "r-467ac0164b580c91",
+            "r-76bec329f7061fbe",
+            "r-f4769cda755997af"
+          ],
+          "hard_parent": false,
+          "id": "a-c44be7bee8e186f9",
+          "resource": "svc-fixture",
+          "success": false
+        }
+      ],
+      "contract": {
+        "actions_complete": true,
+        "basis": "fixture_verified",
+        "owners_complete": true,
+        "single_action_per_request": true
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": true,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": true,
+        "order_ok": true,
+        "rule_empty": true,
+        "tcp_failed": true
+      },
+      "query": "r-40a6b86e180bc358",
+      "requests": [
+        {
+          "id": "r-40a6b86e180bc358",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-467ac0164b580c91",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-0bf44922e27db950",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-76bec329f7061fbe",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-f4769cda755997af",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        }
+      ],
+      "requirement": {
+        "allows_target": false,
+        "applicable": true,
+        "kind": "fixture",
+        "source": "fixture:declared-rule"
+      }
+    }
+  },
+  "H05": {
+    "expected": {
+      "authorization": "CONFORMS",
+      "effect": "REOPENED",
+      "may_success": true,
+      "must_success": true,
+      "processing": "CONSUMED",
+      "status": "OK"
+    },
+    "frozen_input_sha256": "58a1ab88e638d4681e5f8b6a729d0e4520cf5af947d8f613148ffa2b4206c642",
+    "input": {
+      "actions": [
+        {
+          "candidates": [
+            "r-672541ca3b1d0049",
+            "r-a34220aa6afc7cb7",
+            "r-a6a56762cc0cbea2",
+            "r-e2c9b6174811c12e",
+            "r-f713a8a6a5bd13b0"
+          ],
+          "coarse_candidates": [
+            "r-05599e0f77ce7e0c",
+            "r-672541ca3b1d0049",
+            "r-a34220aa6afc7cb7",
+            "r-a6a56762cc0cbea2",
+            "r-e2c9b6174811c12e",
+            "r-f713a8a6a5bd13b0"
+          ],
+          "hard_parent": false,
+          "id": "a-64f1ea1ee928f55d",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-672541ca3b1d0049",
+            "r-a34220aa6afc7cb7",
+            "r-e2c9b6174811c12e"
+          ],
+          "coarse_candidates": [
+            "r-05599e0f77ce7e0c",
+            "r-672541ca3b1d0049",
+            "r-a34220aa6afc7cb7",
+            "r-a6a56762cc0cbea2",
+            "r-e2c9b6174811c12e",
+            "r-f713a8a6a5bd13b0"
+          ],
+          "hard_parent": false,
+          "id": "a-087f4c0ffe174d09",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-672541ca3b1d0049",
+            "r-a6a56762cc0cbea2",
+            "r-e2c9b6174811c12e",
+            "r-f713a8a6a5bd13b0"
+          ],
+          "coarse_candidates": [
+            "r-05599e0f77ce7e0c",
+            "r-672541ca3b1d0049",
+            "r-a34220aa6afc7cb7",
+            "r-a6a56762cc0cbea2",
+            "r-e2c9b6174811c12e",
+            "r-f713a8a6a5bd13b0"
+          ],
+          "hard_parent": false,
+          "id": "a-70c36ee676e3918f",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-672541ca3b1d0049",
+            "r-a6a56762cc0cbea2",
+            "r-f713a8a6a5bd13b0"
+          ],
+          "coarse_candidates": [
+            "r-05599e0f77ce7e0c",
+            "r-672541ca3b1d0049",
+            "r-a34220aa6afc7cb7",
+            "r-a6a56762cc0cbea2",
+            "r-e2c9b6174811c12e",
+            "r-f713a8a6a5bd13b0"
+          ],
+          "hard_parent": false,
+          "id": "a-74953a22f748fb7e",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-672541ca3b1d0049",
+            "r-a34220aa6afc7cb7",
+            "r-a6a56762cc0cbea2",
+            "r-e2c9b6174811c12e",
+            "r-f713a8a6a5bd13b0"
+          ],
+          "coarse_candidates": [
+            "r-05599e0f77ce7e0c",
+            "r-672541ca3b1d0049",
+            "r-a34220aa6afc7cb7",
+            "r-a6a56762cc0cbea2",
+            "r-e2c9b6174811c12e",
+            "r-f713a8a6a5bd13b0"
+          ],
+          "hard_parent": false,
+          "id": "a-539c16cad9898fb2",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-05599e0f77ce7e0c",
+            "r-672541ca3b1d0049",
+            "r-a34220aa6afc7cb7",
+            "r-f713a8a6a5bd13b0"
+          ],
+          "coarse_candidates": [
+            "r-05599e0f77ce7e0c",
+            "r-672541ca3b1d0049",
+            "r-a34220aa6afc7cb7",
+            "r-a6a56762cc0cbea2",
+            "r-e2c9b6174811c12e",
+            "r-f713a8a6a5bd13b0"
+          ],
+          "hard_parent": false,
+          "id": "a-188fcc632282abfb",
+          "resource": "svc-fixture",
+          "success": true
+        }
+      ],
+      "contract": {
+        "actions_complete": true,
+        "basis": "fixture_verified",
+        "owners_complete": true,
+        "single_action_per_request": true
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": true,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": true,
+        "order_ok": true,
+        "rule_empty": true,
+        "tcp_failed": true
+      },
+      "query": "r-05599e0f77ce7e0c",
+      "requests": [
+        {
+          "id": "r-f713a8a6a5bd13b0",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-05599e0f77ce7e0c",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-a34220aa6afc7cb7",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-e2c9b6174811c12e",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-672541ca3b1d0049",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-a6a56762cc0cbea2",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        }
+      ],
+      "requirement": {
+        "allows_target": true,
+        "applicable": true,
+        "kind": "fixture",
+        "source": "fixture:declared-rule"
+      }
+    }
+  },
+  "H06": {
+    "expected": {
+      "authorization": "CONFLICT",
+      "effect": "CONFLICT",
+      "may_success": null,
+      "must_success": null,
+      "processing": "CONFLICT",
+      "status": "CONFLICT"
+    },
+    "frozen_input_sha256": "9a68dd624e44ef224a17de1a8c1bd77b22936409ceafaf0c09bba19998244f56",
+    "input": {
+      "actions": [
+        {
+          "candidates": [
+            "r-19df55079417b9e8",
+            "r-716a0dabe5772f79",
+            "r-fd0f78e30e609b41"
+          ],
+          "coarse_candidates": [
+            "r-19df55079417b9e8",
+            "r-38dd49ead9b308bc",
+            "r-583550ff28ea564e",
+            "r-716a0dabe5772f79",
+            "r-946edad90944d6ae",
+            "r-fd0f78e30e609b41"
+          ],
+          "hard_parent": false,
+          "id": "a-20e027b3d6bc31c0",
+          "resource": "svc-fixture",
+          "success": null
+        },
+        {
+          "candidates": [
+            "r-19df55079417b9e8",
+            "r-716a0dabe5772f79",
+            "r-946edad90944d6ae",
+            "r-fd0f78e30e609b41"
+          ],
+          "coarse_candidates": [
+            "r-19df55079417b9e8",
+            "r-38dd49ead9b308bc",
+            "r-583550ff28ea564e",
+            "r-716a0dabe5772f79",
+            "r-946edad90944d6ae",
+            "r-fd0f78e30e609b41"
+          ],
+          "hard_parent": false,
+          "id": "a-ecc15cacefacdac1",
+          "resource": "svc-fixture",
+          "success": null
+        },
+        {
+          "candidates": [
+            "r-19df55079417b9e8",
+            "r-fd0f78e30e609b41"
+          ],
+          "coarse_candidates": [
+            "r-19df55079417b9e8",
+            "r-38dd49ead9b308bc",
+            "r-583550ff28ea564e",
+            "r-716a0dabe5772f79",
+            "r-946edad90944d6ae",
+            "r-fd0f78e30e609b41"
+          ],
+          "hard_parent": false,
+          "id": "a-ff0b7af51f5cf5a2",
+          "resource": "svc-fixture",
+          "success": null
+        },
+        {
+          "candidates": [
+            "r-38dd49ead9b308bc",
+            "r-583550ff28ea564e"
+          ],
+          "coarse_candidates": [
+            "r-19df55079417b9e8",
+            "r-38dd49ead9b308bc",
+            "r-583550ff28ea564e",
+            "r-716a0dabe5772f79",
+            "r-946edad90944d6ae",
+            "r-fd0f78e30e609b41"
+          ],
+          "hard_parent": false,
+          "id": "a-0374cfc115a1640f",
+          "resource": "svc-fixture",
+          "success": true
+        },
+        {
+          "candidates": [
+            "r-19df55079417b9e8",
+            "r-716a0dabe5772f79",
+            "r-fd0f78e30e609b41"
+          ],
+          "coarse_candidates": [
+            "r-19df55079417b9e8",
+            "r-38dd49ead9b308bc",
+            "r-583550ff28ea564e",
+            "r-716a0dabe5772f79",
+            "r-946edad90944d6ae",
+            "r-fd0f78e30e609b41"
+          ],
+          "hard_parent": false,
+          "id": "a-fdd2b1e76a97949e",
+          "resource": "svc-fixture",
+          "success": null
+        },
+        {
+          "candidates": [
+            "r-19df55079417b9e8",
+            "r-716a0dabe5772f79",
+            "r-946edad90944d6ae"
+          ],
+          "coarse_candidates": [
+            "r-19df55079417b9e8",
+            "r-38dd49ead9b308bc",
+            "r-583550ff28ea564e",
+            "r-716a0dabe5772f79",
+            "r-946edad90944d6ae",
+            "r-fd0f78e30e609b41"
+          ],
+          "hard_parent": false,
+          "id": "a-84229c896e2195d7",
+          "resource": "svc-fixture",
+          "success": null
+        }
+      ],
+      "contract": {
+        "actions_complete": true,
+        "basis": "fixture_verified",
+        "owners_complete": true,
+        "single_action_per_request": true
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": true,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": true,
+        "order_ok": true,
+        "rule_empty": true,
+        "tcp_failed": true
+      },
+      "query": "r-583550ff28ea564e",
+      "requests": [
+        {
+          "id": "r-38dd49ead9b308bc",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-fd0f78e30e609b41",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-19df55079417b9e8",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-583550ff28ea564e",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-946edad90944d6ae",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-716a0dabe5772f79",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        }
+      ],
+      "requirement": {
+        "allows_target": true,
+        "applicable": true,
+        "kind": "fixture",
+        "source": "fixture:declared-rule"
+      }
+    }
+  },
+  "H07": {
+    "expected": {
+      "authorization": "CONFLICT",
+      "effect": "CONFLICT",
+      "may_success": null,
+      "must_success": null,
+      "processing": "CONFLICT",
+      "status": "CONFLICT"
+    },
+    "frozen_input_sha256": "2786b300d6a0947cac964e9fae6e4b77d171e48441981212f67fcc27404977bf",
+    "input": {
+      "actions": [
+        {
+          "candidates": [
+            "r-184bdbee2ccbd30f",
+            "r-6cd717dfd9a8e9ab"
+          ],
+          "coarse_candidates": [
+            "r-184bdbee2ccbd30f",
+            "r-50941277e8820933",
+            "r-50b84f717bfded98",
+            "r-6cd717dfd9a8e9ab",
+            "r-b24717172f164a9b",
+            "r-df21ea7320600fb0"
+          ],
+          "hard_parent": false,
+          "id": "a-78cb1a8ee32c8f39",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-184bdbee2ccbd30f",
+            "r-b24717172f164a9b"
+          ],
+          "coarse_candidates": [
+            "r-184bdbee2ccbd30f",
+            "r-50941277e8820933",
+            "r-50b84f717bfded98",
+            "r-6cd717dfd9a8e9ab",
+            "r-b24717172f164a9b",
+            "r-df21ea7320600fb0"
+          ],
+          "hard_parent": false,
+          "id": "a-0a4dda7991336183",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-50b84f717bfded98",
+            "r-b24717172f164a9b"
+          ],
+          "coarse_candidates": [
+            "r-184bdbee2ccbd30f",
+            "r-50941277e8820933",
+            "r-50b84f717bfded98",
+            "r-6cd717dfd9a8e9ab",
+            "r-b24717172f164a9b",
+            "r-df21ea7320600fb0"
+          ],
+          "hard_parent": false,
+          "id": "a-716d8193aec25dd8",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-50941277e8820933"
+          ],
+          "coarse_candidates": [
+            "r-184bdbee2ccbd30f",
+            "r-50941277e8820933",
+            "r-50b84f717bfded98",
+            "r-6cd717dfd9a8e9ab",
+            "r-b24717172f164a9b",
+            "r-df21ea7320600fb0"
+          ],
+          "hard_parent": true,
+          "id": "a-9bc7d52e3b3b157a",
+          "resource": "svc-fixture",
+          "success": true
+        },
+        {
+          "candidates": [
+            "r-50941277e8820933"
+          ],
+          "coarse_candidates": [
+            "r-184bdbee2ccbd30f",
+            "r-50941277e8820933",
+            "r-50b84f717bfded98",
+            "r-6cd717dfd9a8e9ab",
+            "r-b24717172f164a9b",
+            "r-df21ea7320600fb0"
+          ],
+          "hard_parent": true,
+          "id": "a-db41d4f5e43e2b6e",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-6cd717dfd9a8e9ab",
+            "r-df21ea7320600fb0"
+          ],
+          "coarse_candidates": [
+            "r-184bdbee2ccbd30f",
+            "r-50941277e8820933",
+            "r-50b84f717bfded98",
+            "r-6cd717dfd9a8e9ab",
+            "r-b24717172f164a9b",
+            "r-df21ea7320600fb0"
+          ],
+          "hard_parent": false,
+          "id": "a-d4a58af592d86233",
+          "resource": "svc-fixture",
+          "success": false
+        }
+      ],
+      "contract": {
+        "actions_complete": true,
+        "basis": "fixture_verified",
+        "owners_complete": true,
+        "single_action_per_request": true
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": true,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": true,
+        "order_ok": true,
+        "rule_empty": true,
+        "tcp_failed": true
+      },
+      "query": "r-50b84f717bfded98",
+      "requests": [
+        {
+          "id": "r-50b84f717bfded98",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-6cd717dfd9a8e9ab",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-184bdbee2ccbd30f",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-50941277e8820933",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-df21ea7320600fb0",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-b24717172f164a9b",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        }
+      ],
+      "requirement": {
+        "allows_target": true,
+        "applicable": true,
+        "kind": "fixture",
+        "source": "fixture:declared-rule"
+      }
+    }
+  },
+  "H08": {
+    "expected": {
+      "authorization": "CONFLICT",
+      "effect": "CONFLICT",
+      "may_success": null,
+      "must_success": null,
+      "processing": "CONFLICT",
+      "status": "CONFLICT"
+    },
+    "frozen_input_sha256": "b1feddfe90a1cc3a9778004b0e34bdc20025b56d189c0f25df2df8c9e141c10f",
+    "input": {
+      "actions": [
+        {
+          "candidates": [
+            "r-3b2bace3d5403d03",
+            "r-9b52aee9d1a34a7a",
+            "r-ce63d321c2fb7a87"
+          ],
+          "coarse_candidates": [
+            "r-16404768fdb7991d",
+            "r-3b2bace3d5403d03",
+            "r-5cb98635bc98e370",
+            "r-9b52aee9d1a34a7a",
+            "r-ce63d321c2fb7a87"
+          ],
+          "hard_parent": false,
+          "id": "a-806196c8dc3cd10f",
+          "resource": "svc-fixture",
+          "success": null
+        },
+        {
+          "candidates": [
+            "r-9b52aee9d1a34a7a",
+            "r-ce63d321c2fb7a87"
+          ],
+          "coarse_candidates": [
+            "r-16404768fdb7991d",
+            "r-3b2bace3d5403d03",
+            "r-5cb98635bc98e370",
+            "r-9b52aee9d1a34a7a",
+            "r-ce63d321c2fb7a87"
+          ],
+          "hard_parent": false,
+          "id": "a-a10eab4c61b870f2",
+          "resource": "svc-fixture",
+          "success": null
+        },
+        {
+          "candidates": [
+            "r-3b2bace3d5403d03",
+            "r-9b52aee9d1a34a7a",
+            "r-ce63d321c2fb7a87"
+          ],
+          "coarse_candidates": [
+            "r-16404768fdb7991d",
+            "r-3b2bace3d5403d03",
+            "r-5cb98635bc98e370",
+            "r-9b52aee9d1a34a7a",
+            "r-ce63d321c2fb7a87"
+          ],
+          "hard_parent": false,
+          "id": "a-157ee2ab49e41b91",
+          "resource": "svc-fixture",
+          "success": null
+        },
+        {
+          "candidates": [
+            "r-16404768fdb7991d",
+            "r-5cb98635bc98e370"
+          ],
+          "coarse_candidates": [
+            "r-16404768fdb7991d",
+            "r-3b2bace3d5403d03",
+            "r-5cb98635bc98e370",
+            "r-9b52aee9d1a34a7a",
+            "r-ce63d321c2fb7a87"
+          ],
+          "hard_parent": false,
+          "id": "a-885beee234d0877d",
+          "resource": "svc-fixture",
+          "success": true
+        },
+        {
+          "candidates": [
+            "r-3b2bace3d5403d03",
+            "r-9b52aee9d1a34a7a",
+            "r-ce63d321c2fb7a87"
+          ],
+          "coarse_candidates": [
+            "r-16404768fdb7991d",
+            "r-3b2bace3d5403d03",
+            "r-5cb98635bc98e370",
+            "r-9b52aee9d1a34a7a",
+            "r-ce63d321c2fb7a87"
+          ],
+          "hard_parent": false,
+          "id": "a-272f823c243d0301",
+          "resource": "svc-fixture",
+          "success": null
+        }
+      ],
+      "contract": {
+        "actions_complete": true,
+        "basis": "fixture_verified",
+        "owners_complete": true,
+        "single_action_per_request": true
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": true,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": true,
+        "order_ok": true,
+        "rule_empty": true,
+        "tcp_failed": true
+      },
+      "query": "r-5cb98635bc98e370",
+      "requests": [
+        {
+          "id": "r-ce63d321c2fb7a87",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-9b52aee9d1a34a7a",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-16404768fdb7991d",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-5cb98635bc98e370",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-3b2bace3d5403d03",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        }
+      ],
+      "requirement": {
+        "allows_target": false,
+        "applicable": true,
+        "kind": "fixture",
+        "source": "fixture:declared-rule"
+      }
+    }
+  },
+  "H09": {
+    "expected": {
+      "authorization": "CONFORMS",
+      "effect": "ACTION_ONLY",
+      "may_success": true,
+      "must_success": true,
+      "processing": "CONSUMED",
+      "status": "OK"
+    },
+    "frozen_input_sha256": "de825737a606ba426043b5a83c74d27c5f780144d0c8524002030f9e39b15927",
+    "input": {
+      "actions": [
+        {
+          "candidates": [
+            "r-12ba84202cfa4e12",
+            "r-84429870bc74d322"
+          ],
+          "coarse_candidates": [
+            "r-12ba84202cfa4e12",
+            "r-12bfeeb53611c735",
+            "r-51604d810dcc344d",
+            "r-84429870bc74d322"
+          ],
+          "hard_parent": false,
+          "id": "a-675933722fc95268",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-12bfeeb53611c735",
+            "r-84429870bc74d322"
+          ],
+          "coarse_candidates": [
+            "r-12ba84202cfa4e12",
+            "r-12bfeeb53611c735",
+            "r-51604d810dcc344d",
+            "r-84429870bc74d322"
+          ],
+          "hard_parent": false,
+          "id": "a-b695a6b35e1750f5",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-51604d810dcc344d"
+          ],
+          "coarse_candidates": [
+            "r-12ba84202cfa4e12",
+            "r-12bfeeb53611c735",
+            "r-51604d810dcc344d",
+            "r-84429870bc74d322"
+          ],
+          "hard_parent": true,
+          "id": "a-d2fa8ca7cc646f2b",
+          "resource": "svc-fixture",
+          "success": true
+        }
+      ],
+      "contract": {
+        "actions_complete": true,
+        "basis": "fixture_verified",
+        "owners_complete": true,
+        "single_action_per_request": true
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": true,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": true,
+        "order_ok": true,
+        "rule_empty": null,
+        "tcp_failed": true
+      },
+      "query": "r-51604d810dcc344d",
+      "requests": [
+        {
+          "id": "r-12bfeeb53611c735",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-12ba84202cfa4e12",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-84429870bc74d322",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-51604d810dcc344d",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        }
+      ],
+      "requirement": {
+        "allows_target": true,
+        "applicable": true,
+        "kind": "fixture",
+        "source": "fixture:declared-rule"
+      }
+    }
+  },
+  "H10": {
+    "expected": {
+      "authorization": "DEVIATES",
+      "effect": "ACTION_ONLY",
+      "may_success": true,
+      "must_success": true,
+      "processing": "CONSUMED",
+      "status": "OK"
+    },
+    "frozen_input_sha256": "10df3c70ff4bebe13f933a5d7126c1b453f0cc61ee56f44f1481eba20c9f2772",
+    "input": {
+      "actions": [
+        {
+          "candidates": [
+            "r-00d5f16946c8fdfc",
+            "r-44bb20908db08a45"
+          ],
+          "coarse_candidates": [
+            "r-00d5f16946c8fdfc",
+            "r-44bb20908db08a45",
+            "r-8359e80d51e1d830",
+            "r-cb35ab1ce94597fc",
+            "r-dc0b8ed2c95b7805"
+          ],
+          "hard_parent": false,
+          "id": "a-9458c1154e6d472e",
+          "resource": "svc-fixture",
+          "success": true
+        },
+        {
+          "candidates": [
+            "r-00d5f16946c8fdfc",
+            "r-dc0b8ed2c95b7805"
+          ],
+          "coarse_candidates": [
+            "r-00d5f16946c8fdfc",
+            "r-44bb20908db08a45",
+            "r-8359e80d51e1d830",
+            "r-cb35ab1ce94597fc",
+            "r-dc0b8ed2c95b7805"
+          ],
+          "hard_parent": false,
+          "id": "a-d64e920de448ae93",
+          "resource": "svc-fixture",
+          "success": true
+        },
+        {
+          "candidates": [
+            "r-8359e80d51e1d830",
+            "r-dc0b8ed2c95b7805"
+          ],
+          "coarse_candidates": [
+            "r-00d5f16946c8fdfc",
+            "r-44bb20908db08a45",
+            "r-8359e80d51e1d830",
+            "r-cb35ab1ce94597fc",
+            "r-dc0b8ed2c95b7805"
+          ],
+          "hard_parent": false,
+          "id": "a-12b1fd230475917d",
+          "resource": "svc-fixture",
+          "success": true
+        },
+        {
+          "candidates": [
+            "r-44bb20908db08a45",
+            "r-cb35ab1ce94597fc"
+          ],
+          "coarse_candidates": [
+            "r-00d5f16946c8fdfc",
+            "r-44bb20908db08a45",
+            "r-8359e80d51e1d830",
+            "r-cb35ab1ce94597fc",
+            "r-dc0b8ed2c95b7805"
+          ],
+          "hard_parent": false,
+          "id": "a-a119ec0effad8d73",
+          "resource": "svc-fixture",
+          "success": true
+        },
+        {
+          "candidates": [
+            "r-8359e80d51e1d830",
+            "r-cb35ab1ce94597fc"
+          ],
+          "coarse_candidates": [
+            "r-00d5f16946c8fdfc",
+            "r-44bb20908db08a45",
+            "r-8359e80d51e1d830",
+            "r-cb35ab1ce94597fc",
+            "r-dc0b8ed2c95b7805"
+          ],
+          "hard_parent": false,
+          "id": "a-4f60b4f7f8b968e2",
+          "resource": "svc-fixture",
+          "success": true
+        }
+      ],
+      "contract": {
+        "actions_complete": true,
+        "basis": "fixture_verified",
+        "owners_complete": true,
+        "single_action_per_request": true
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": true,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": true,
+        "order_ok": true,
+        "rule_empty": true,
+        "tcp_failed": true
+      },
+      "query": "r-8359e80d51e1d830",
+      "requests": [
+        {
+          "id": "r-cb35ab1ce94597fc",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-dc0b8ed2c95b7805",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-00d5f16946c8fdfc",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-8359e80d51e1d830",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-44bb20908db08a45",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        }
+      ],
+      "requirement": {
+        "allows_target": false,
+        "applicable": true,
+        "kind": "fixture",
+        "source": "fixture:declared-rule"
+      }
+    }
+  },
+  "H11": {
+    "expected": {
+      "authorization": "DEVIATES",
+      "effect": "REOPENED",
+      "may_success": true,
+      "must_success": true,
+      "processing": "CONSUMED",
+      "status": "OK"
+    },
+    "frozen_input_sha256": "3e6bda762335087f845b394136053534a8a7352d1ae855ba2a4b6d60b166d4a2",
+    "input": {
+      "actions": [
+        {
+          "candidates": [
+            "r-42a61cbad475cc66",
+            "r-691688535808ebdc",
+            "r-7896b82a22cfd470"
+          ],
+          "coarse_candidates": [
+            "r-42a61cbad475cc66",
+            "r-691688535808ebdc",
+            "r-7896b82a22cfd470",
+            "r-a92d79644c6aa56b",
+            "r-f47231bb564d50b9"
+          ],
+          "hard_parent": false,
+          "id": "a-a7606c743fbb4a15",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-42a61cbad475cc66",
+            "r-691688535808ebdc",
+            "r-7896b82a22cfd470",
+            "r-a92d79644c6aa56b",
+            "r-f47231bb564d50b9"
+          ],
+          "coarse_candidates": [
+            "r-42a61cbad475cc66",
+            "r-691688535808ebdc",
+            "r-7896b82a22cfd470",
+            "r-a92d79644c6aa56b",
+            "r-f47231bb564d50b9"
+          ],
+          "hard_parent": false,
+          "id": "a-5c68585efc5b6f09",
+          "resource": "svc-fixture",
+          "success": true
+        },
+        {
+          "candidates": [
+            "r-42a61cbad475cc66",
+            "r-691688535808ebdc",
+            "r-7896b82a22cfd470",
+            "r-a92d79644c6aa56b"
+          ],
+          "coarse_candidates": [
+            "r-42a61cbad475cc66",
+            "r-691688535808ebdc",
+            "r-7896b82a22cfd470",
+            "r-a92d79644c6aa56b",
+            "r-f47231bb564d50b9"
+          ],
+          "hard_parent": false,
+          "id": "a-8b0ed5edea941b0c",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-42a61cbad475cc66",
+            "r-691688535808ebdc",
+            "r-a92d79644c6aa56b"
+          ],
+          "coarse_candidates": [
+            "r-42a61cbad475cc66",
+            "r-691688535808ebdc",
+            "r-7896b82a22cfd470",
+            "r-a92d79644c6aa56b",
+            "r-f47231bb564d50b9"
+          ],
+          "hard_parent": false,
+          "id": "a-2aa8e6b9f6d01dd8",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-42a61cbad475cc66",
+            "r-691688535808ebdc",
+            "r-7896b82a22cfd470",
+            "r-a92d79644c6aa56b"
+          ],
+          "coarse_candidates": [
+            "r-42a61cbad475cc66",
+            "r-691688535808ebdc",
+            "r-7896b82a22cfd470",
+            "r-a92d79644c6aa56b",
+            "r-f47231bb564d50b9"
+          ],
+          "hard_parent": false,
+          "id": "a-457072b76f0bf3db",
+          "resource": "svc-fixture",
+          "success": false
+        }
+      ],
+      "contract": {
+        "actions_complete": true,
+        "basis": "fixture_verified",
+        "owners_complete": true,
+        "single_action_per_request": true
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": true,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": true,
+        "order_ok": true,
+        "rule_empty": true,
+        "tcp_failed": true
+      },
+      "query": "r-f47231bb564d50b9",
+      "requests": [
+        {
+          "id": "r-f47231bb564d50b9",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-7896b82a22cfd470",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-42a61cbad475cc66",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-a92d79644c6aa56b",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-691688535808ebdc",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        }
+      ],
+      "requirement": {
+        "allows_target": false,
+        "applicable": true,
+        "kind": "fixture",
+        "source": "fixture:declared-rule"
+      }
+    }
+  },
+  "H12": {
+    "expected": {
+      "authorization": "DEVIATES",
+      "effect": "ACTION_ONLY",
+      "may_success": true,
+      "must_success": true,
+      "processing": "CONSUMED",
+      "status": "OK"
+    },
+    "frozen_input_sha256": "1c98a5d4d1d3c8553c59225c38878dfdb28ad3bdb121267b8ebc9986129863d2",
+    "input": {
+      "actions": [
+        {
+          "candidates": [
+            "r-fc2eca48fd63f145"
+          ],
+          "coarse_candidates": [
+            "r-0007ee996f17713e",
+            "r-1691c3ebf883b9bd",
+            "r-17418790196afe2d",
+            "r-815815db539fce58",
+            "r-fc2eca48fd63f145"
+          ],
+          "hard_parent": true,
+          "id": "a-8bea40ce1a8f6599",
+          "resource": "svc-fixture",
+          "success": true
+        },
+        {
+          "candidates": [
+            "r-0007ee996f17713e",
+            "r-815815db539fce58"
+          ],
+          "coarse_candidates": [
+            "r-0007ee996f17713e",
+            "r-1691c3ebf883b9bd",
+            "r-17418790196afe2d",
+            "r-815815db539fce58",
+            "r-fc2eca48fd63f145"
+          ],
+          "hard_parent": false,
+          "id": "a-95510048ffabe90e",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-1691c3ebf883b9bd",
+            "r-815815db539fce58"
+          ],
+          "coarse_candidates": [
+            "r-0007ee996f17713e",
+            "r-1691c3ebf883b9bd",
+            "r-17418790196afe2d",
+            "r-815815db539fce58",
+            "r-fc2eca48fd63f145"
+          ],
+          "hard_parent": false,
+          "id": "a-d91d55b33566e146",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-1691c3ebf883b9bd",
+            "r-17418790196afe2d"
+          ],
+          "coarse_candidates": [
+            "r-0007ee996f17713e",
+            "r-1691c3ebf883b9bd",
+            "r-17418790196afe2d",
+            "r-815815db539fce58",
+            "r-fc2eca48fd63f145"
+          ],
+          "hard_parent": false,
+          "id": "a-8a2ee79f7509b04c",
+          "resource": "svc-fixture",
+          "success": false
+        }
+      ],
+      "contract": {
+        "actions_complete": true,
+        "basis": "fixture_verified",
+        "owners_complete": true,
+        "single_action_per_request": true
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": null,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": true,
+        "order_ok": true,
+        "rule_empty": true,
+        "tcp_failed": true
+      },
+      "query": "r-fc2eca48fd63f145",
+      "requests": [
+        {
+          "id": "r-fc2eca48fd63f145",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-17418790196afe2d",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-1691c3ebf883b9bd",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-815815db539fce58",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-0007ee996f17713e",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        }
+      ],
+      "requirement": {
+        "allows_target": false,
+        "applicable": true,
+        "kind": "fixture",
+        "source": "fixture:declared-rule"
+      }
+    }
+  },
+  "H13": {
+    "expected": {
+      "authorization": "UNKNOWN",
+      "effect": "UNKNOWN",
+      "may_success": true,
+      "must_success": false,
+      "processing": "CONSUMED",
+      "status": "OK"
+    },
+    "frozen_input_sha256": "80239a56f526d08a58a832ef13b76ae52be2d5ed0bee44760a555c659721673a",
+    "input": {
+      "actions": [
+        {
+          "candidates": [
+            "r-981c53809a386665",
+            "r-bc03c3a630209605"
+          ],
+          "coarse_candidates": [
+            "r-28c95e5cd6657306",
+            "r-981c53809a386665",
+            "r-b22723187f49cf23",
+            "r-bc03c3a630209605"
+          ],
+          "hard_parent": false,
+          "id": "a-7cf35a1f606497cd",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-28c95e5cd6657306",
+            "r-981c53809a386665"
+          ],
+          "coarse_candidates": [
+            "r-28c95e5cd6657306",
+            "r-981c53809a386665",
+            "r-b22723187f49cf23",
+            "r-bc03c3a630209605"
+          ],
+          "hard_parent": false,
+          "id": "a-9da557497422687e",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-b22723187f49cf23",
+            "r-bc03c3a630209605"
+          ],
+          "coarse_candidates": [
+            "r-28c95e5cd6657306",
+            "r-981c53809a386665",
+            "r-b22723187f49cf23",
+            "r-bc03c3a630209605"
+          ],
+          "hard_parent": false,
+          "id": "a-6be518c76d34d690",
+          "resource": "svc-fixture",
+          "success": true
+        }
+      ],
+      "contract": {
+        "actions_complete": true,
+        "basis": "fixture_verified",
+        "owners_complete": true,
+        "single_action_per_request": true
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": true,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": true,
+        "order_ok": true,
+        "rule_empty": true,
+        "tcp_failed": true
+      },
+      "query": "r-b22723187f49cf23",
+      "requests": [
+        {
+          "id": "r-b22723187f49cf23",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-981c53809a386665",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-bc03c3a630209605",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-28c95e5cd6657306",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        }
+      ],
+      "requirement": {
+        "allows_target": true,
+        "applicable": true,
+        "kind": "fixture",
+        "source": "fixture:declared-rule"
+      }
+    }
+  },
+  "H14": {
+    "expected": {
+      "authorization": "UNKNOWN",
+      "effect": "UNKNOWN",
+      "may_success": true,
+      "must_success": false,
+      "processing": "CONSUMED",
+      "status": "OK"
+    },
+    "frozen_input_sha256": "2daad498e30c71c8f6fe36df9b1d77e322b3a2973709841e549e091132f89c78",
+    "input": {
+      "actions": [
+        {
+          "candidates": [
+            "r-4f9819e34c85274c",
+            "r-b00f914d3aeb33ab"
+          ],
+          "coarse_candidates": [
+            "r-2da4a3d8cce3f293",
+            "r-4f9819e34c85274c",
+            "r-9fb4ce38619d0444",
+            "r-b00f914d3aeb33ab",
+            "r-f412b108afa6bdbb"
+          ],
+          "hard_parent": false,
+          "id": "a-138d580aca17ed5d",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-2da4a3d8cce3f293",
+            "r-b00f914d3aeb33ab"
+          ],
+          "coarse_candidates": [
+            "r-2da4a3d8cce3f293",
+            "r-4f9819e34c85274c",
+            "r-9fb4ce38619d0444",
+            "r-b00f914d3aeb33ab",
+            "r-f412b108afa6bdbb"
+          ],
+          "hard_parent": false,
+          "id": "a-462ddaa444679347",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-2da4a3d8cce3f293",
+            "r-f412b108afa6bdbb"
+          ],
+          "coarse_candidates": [
+            "r-2da4a3d8cce3f293",
+            "r-4f9819e34c85274c",
+            "r-9fb4ce38619d0444",
+            "r-b00f914d3aeb33ab",
+            "r-f412b108afa6bdbb"
+          ],
+          "hard_parent": false,
+          "id": "a-925c8ab77be39eff",
+          "resource": "svc-fixture",
+          "success": false
+        }
+      ],
+      "contract": {
+        "actions_complete": false,
+        "basis": "fixture_verified",
+        "owners_complete": true,
+        "single_action_per_request": true
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": true,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": true,
+        "order_ok": true,
+        "rule_empty": true,
+        "tcp_failed": true
+      },
+      "query": "r-9fb4ce38619d0444",
+      "requests": [
+        {
+          "id": "r-b00f914d3aeb33ab",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-9fb4ce38619d0444",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-4f9819e34c85274c",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-2da4a3d8cce3f293",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-f412b108afa6bdbb",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        }
+      ],
+      "requirement": {
+        "allows_target": false,
+        "applicable": true,
+        "kind": "fixture",
+        "source": "fixture:declared-rule"
+      }
+    }
+  },
+  "H15": {
+    "expected": {
+      "authorization": "CONFORMS",
+      "effect": "ACTION_ONLY",
+      "may_success": true,
+      "must_success": true,
+      "processing": "CONSUMED",
+      "status": "OK"
+    },
+    "frozen_input_sha256": "322196ad7c87921630f4177ca50d353bb10128c1814ca8a70035439c9e07c9dc",
+    "input": {
+      "actions": [
+        {
+          "candidates": [
+            "r-418b63f1d37b0aae",
+            "r-de8c125585c497f0"
+          ],
+          "coarse_candidates": [
+            "r-418b63f1d37b0aae",
+            "r-8345e84c7e63ca2f",
+            "r-c9259bb66df697e7",
+            "r-de8c125585c497f0",
+            "r-e22ac682da66ed4c",
+            "r-e2efc4ef99b3a225"
+          ],
+          "hard_parent": false,
+          "id": "a-5c788b7ffff31984",
+          "resource": "svc-fixture",
+          "success": true
+        },
+        {
+          "candidates": [
+            "r-418b63f1d37b0aae",
+            "r-e22ac682da66ed4c"
+          ],
+          "coarse_candidates": [
+            "r-418b63f1d37b0aae",
+            "r-8345e84c7e63ca2f",
+            "r-c9259bb66df697e7",
+            "r-de8c125585c497f0",
+            "r-e22ac682da66ed4c",
+            "r-e2efc4ef99b3a225"
+          ],
+          "hard_parent": false,
+          "id": "a-8d374dbb2e246a0b",
+          "resource": "svc-fixture",
+          "success": true
+        },
+        {
+          "candidates": [
+            "r-8345e84c7e63ca2f",
+            "r-e2efc4ef99b3a225"
+          ],
+          "coarse_candidates": [
+            "r-418b63f1d37b0aae",
+            "r-8345e84c7e63ca2f",
+            "r-c9259bb66df697e7",
+            "r-de8c125585c497f0",
+            "r-e22ac682da66ed4c",
+            "r-e2efc4ef99b3a225"
+          ],
+          "hard_parent": false,
+          "id": "a-d03cc1652e97f2ba",
+          "resource": "svc-fixture",
+          "success": true
+        },
+        {
+          "candidates": [
+            "r-8345e84c7e63ca2f",
+            "r-c9259bb66df697e7"
+          ],
+          "coarse_candidates": [
+            "r-418b63f1d37b0aae",
+            "r-8345e84c7e63ca2f",
+            "r-c9259bb66df697e7",
+            "r-de8c125585c497f0",
+            "r-e22ac682da66ed4c",
+            "r-e2efc4ef99b3a225"
+          ],
+          "hard_parent": false,
+          "id": "a-f19ea508fee209c6",
+          "resource": "svc-fixture",
+          "success": true
+        },
+        {
+          "candidates": [
+            "r-c9259bb66df697e7",
+            "r-de8c125585c497f0"
+          ],
+          "coarse_candidates": [
+            "r-418b63f1d37b0aae",
+            "r-8345e84c7e63ca2f",
+            "r-c9259bb66df697e7",
+            "r-de8c125585c497f0",
+            "r-e22ac682da66ed4c",
+            "r-e2efc4ef99b3a225"
+          ],
+          "hard_parent": false,
+          "id": "a-dc06ee7ff2a81fc0",
+          "resource": "svc-fixture",
+          "success": true
+        },
+        {
+          "candidates": [
+            "r-e22ac682da66ed4c",
+            "r-e2efc4ef99b3a225"
+          ],
+          "coarse_candidates": [
+            "r-418b63f1d37b0aae",
+            "r-8345e84c7e63ca2f",
+            "r-c9259bb66df697e7",
+            "r-de8c125585c497f0",
+            "r-e22ac682da66ed4c",
+            "r-e2efc4ef99b3a225"
+          ],
+          "hard_parent": false,
+          "id": "a-6d1616c199c9410d",
+          "resource": "svc-fixture",
+          "success": true
+        }
+      ],
+      "contract": {
+        "actions_complete": true,
+        "basis": "fixture_verified",
+        "owners_complete": true,
+        "single_action_per_request": true
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": true,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": true,
+        "order_ok": true,
+        "rule_empty": true,
+        "tcp_failed": true
+      },
+      "query": "r-e2efc4ef99b3a225",
+      "requests": [
+        {
+          "id": "r-e22ac682da66ed4c",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-e2efc4ef99b3a225",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-c9259bb66df697e7",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-8345e84c7e63ca2f",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-418b63f1d37b0aae",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-de8c125585c497f0",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        }
+      ],
+      "requirement": {
+        "allows_target": true,
+        "applicable": true,
+        "kind": "fixture",
+        "source": "fixture:declared-rule"
+      }
+    }
+  },
+  "H16": {
+    "expected": {
+      "authorization": "UNKNOWN",
+      "effect": "UNKNOWN",
+      "may_success": true,
+      "must_success": false,
+      "processing": "CONSUMED",
+      "status": "OK"
+    },
+    "frozen_input_sha256": "517dc708972497538e88c0075108a6faa75adec4f608adabf9addd054d18de73",
+    "input": {
+      "actions": [
+        {
+          "candidates": [
+            "r-2cfc378d4049e1ff",
+            "r-317f83e9afa277a0"
+          ],
+          "coarse_candidates": [
+            "r-1aa488352ddae010",
+            "r-2cfc378d4049e1ff",
+            "r-317f83e9afa277a0",
+            "r-821ba3965cc2cdfd",
+            "r-82f8fae25adfc5e4",
+            "r-e70e395ed5c3d30c"
+          ],
+          "hard_parent": false,
+          "id": "a-7fdd2996d0bfa3bf",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-821ba3965cc2cdfd",
+            "r-e70e395ed5c3d30c"
+          ],
+          "coarse_candidates": [
+            "r-1aa488352ddae010",
+            "r-2cfc378d4049e1ff",
+            "r-317f83e9afa277a0",
+            "r-821ba3965cc2cdfd",
+            "r-82f8fae25adfc5e4",
+            "r-e70e395ed5c3d30c"
+          ],
+          "hard_parent": false,
+          "id": "a-b42fc3197a7f0639",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-1aa488352ddae010",
+            "r-2cfc378d4049e1ff"
+          ],
+          "coarse_candidates": [
+            "r-1aa488352ddae010",
+            "r-2cfc378d4049e1ff",
+            "r-317f83e9afa277a0",
+            "r-821ba3965cc2cdfd",
+            "r-82f8fae25adfc5e4",
+            "r-e70e395ed5c3d30c"
+          ],
+          "hard_parent": false,
+          "id": "a-e8513ba75f917092",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-1aa488352ddae010",
+            "r-e70e395ed5c3d30c"
+          ],
+          "coarse_candidates": [
+            "r-1aa488352ddae010",
+            "r-2cfc378d4049e1ff",
+            "r-317f83e9afa277a0",
+            "r-821ba3965cc2cdfd",
+            "r-82f8fae25adfc5e4",
+            "r-e70e395ed5c3d30c"
+          ],
+          "hard_parent": false,
+          "id": "a-cbc456b2166a4bbf",
+          "resource": "svc-fixture",
+          "success": false
+        }
+      ],
+      "contract": {
+        "actions_complete": false,
+        "basis": "fixture_verified",
+        "owners_complete": true,
+        "single_action_per_request": true
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": true,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": true,
+        "order_ok": true,
+        "rule_empty": true,
+        "tcp_failed": true
+      },
+      "query": "r-82f8fae25adfc5e4",
+      "requests": [
+        {
+          "id": "r-82f8fae25adfc5e4",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-821ba3965cc2cdfd",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-317f83e9afa277a0",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-e70e395ed5c3d30c",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-1aa488352ddae010",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-2cfc378d4049e1ff",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        }
+      ],
+      "requirement": {
+        "allows_target": true,
+        "applicable": true,
+        "kind": "fixture",
+        "source": "fixture:declared-rule"
+      }
+    }
+  },
+  "H17": {
+    "expected": {
+      "authorization": "UNKNOWN",
+      "effect": "UNKNOWN",
+      "may_success": true,
+      "must_success": false,
+      "processing": "CONSUMED",
+      "status": "OK"
+    },
+    "frozen_input_sha256": "c5a812ba0a6141667757fc65e5fd4cdaf02716814bfaf13c6708d2ab09ce0481",
+    "input": {
+      "actions": [
+        {
+          "candidates": [
+            "r-0c9640d60e1ef7ac",
+            "r-438a107a9c16fcef"
+          ],
+          "coarse_candidates": [
+            "r-0a4a058fa9a3c84c",
+            "r-0c9640d60e1ef7ac",
+            "r-3faaca7bc66745bc",
+            "r-438a107a9c16fcef",
+            "r-4e5c4db1fbe8e6a1"
+          ],
+          "hard_parent": false,
+          "id": "a-4d1170f0b02f1688",
+          "resource": "svc-fixture",
+          "success": true
+        },
+        {
+          "candidates": [
+            "r-0a4a058fa9a3c84c",
+            "r-3faaca7bc66745bc"
+          ],
+          "coarse_candidates": [
+            "r-0a4a058fa9a3c84c",
+            "r-0c9640d60e1ef7ac",
+            "r-3faaca7bc66745bc",
+            "r-438a107a9c16fcef",
+            "r-4e5c4db1fbe8e6a1"
+          ],
+          "hard_parent": false,
+          "id": "a-7eb3645af97bfc3b",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-0a4a058fa9a3c84c",
+            "r-4e5c4db1fbe8e6a1"
+          ],
+          "coarse_candidates": [
+            "r-0a4a058fa9a3c84c",
+            "r-0c9640d60e1ef7ac",
+            "r-3faaca7bc66745bc",
+            "r-438a107a9c16fcef",
+            "r-4e5c4db1fbe8e6a1"
+          ],
+          "hard_parent": false,
+          "id": "a-183df6760dacefb0",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-3faaca7bc66745bc",
+            "r-438a107a9c16fcef"
+          ],
+          "coarse_candidates": [
+            "r-0a4a058fa9a3c84c",
+            "r-0c9640d60e1ef7ac",
+            "r-3faaca7bc66745bc",
+            "r-438a107a9c16fcef",
+            "r-4e5c4db1fbe8e6a1"
+          ],
+          "hard_parent": false,
+          "id": "a-0f8b374cd0a1afd1",
+          "resource": "svc-fixture",
+          "success": false
+        }
+      ],
+      "contract": {
+        "actions_complete": true,
+        "basis": "fixture_verified",
+        "owners_complete": true,
+        "single_action_per_request": true
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": true,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": true,
+        "order_ok": true,
+        "rule_empty": true,
+        "tcp_failed": true
+      },
+      "query": "r-0c9640d60e1ef7ac",
+      "requests": [
+        {
+          "id": "r-0c9640d60e1ef7ac",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-3faaca7bc66745bc",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-438a107a9c16fcef",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-4e5c4db1fbe8e6a1",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-0a4a058fa9a3c84c",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        }
+      ],
+      "requirement": {
+        "allows_target": false,
+        "applicable": true,
+        "kind": "fixture",
+        "source": "fixture:declared-rule"
+      }
+    }
+  },
+  "H18": {
+    "expected": {
+      "authorization": "UNKNOWN",
+      "effect": "UNKNOWN",
+      "may_success": true,
+      "must_success": false,
+      "processing": "CONSUMED",
+      "status": "OK"
+    },
+    "frozen_input_sha256": "b5eac95f6227a36b915361a2a7533f05f865923245895bfd3b0716b7b5d27be1",
+    "input": {
+      "actions": [
+        {
+          "candidates": [
+            "r-488e024a6a0ae181",
+            "r-d5f8965387a86c35"
+          ],
+          "coarse_candidates": [
+            "r-02076afdb944bece",
+            "r-08b9b649cba5fa6d",
+            "r-488e024a6a0ae181",
+            "r-5934dfd41e460685",
+            "r-d5f8965387a86c35",
+            "r-fe63e2cfca710df6"
+          ],
+          "hard_parent": false,
+          "id": "a-e83b83c82f3cfd95",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-02076afdb944bece",
+            "r-488e024a6a0ae181"
+          ],
+          "coarse_candidates": [
+            "r-02076afdb944bece",
+            "r-08b9b649cba5fa6d",
+            "r-488e024a6a0ae181",
+            "r-5934dfd41e460685",
+            "r-d5f8965387a86c35",
+            "r-fe63e2cfca710df6"
+          ],
+          "hard_parent": false,
+          "id": "a-7854f44cb03c4591",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-08b9b649cba5fa6d",
+            "r-d5f8965387a86c35"
+          ],
+          "coarse_candidates": [
+            "r-02076afdb944bece",
+            "r-08b9b649cba5fa6d",
+            "r-488e024a6a0ae181",
+            "r-5934dfd41e460685",
+            "r-d5f8965387a86c35",
+            "r-fe63e2cfca710df6"
+          ],
+          "hard_parent": false,
+          "id": "a-2f031ed060475502",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-5934dfd41e460685",
+            "r-fe63e2cfca710df6"
+          ],
+          "coarse_candidates": [
+            "r-02076afdb944bece",
+            "r-08b9b649cba5fa6d",
+            "r-488e024a6a0ae181",
+            "r-5934dfd41e460685",
+            "r-d5f8965387a86c35",
+            "r-fe63e2cfca710df6"
+          ],
+          "hard_parent": false,
+          "id": "a-db046c3a63b86483",
+          "resource": "svc-fixture",
+          "success": true
+        },
+        {
+          "candidates": [
+            "r-08b9b649cba5fa6d",
+            "r-fe63e2cfca710df6"
+          ],
+          "coarse_candidates": [
+            "r-02076afdb944bece",
+            "r-08b9b649cba5fa6d",
+            "r-488e024a6a0ae181",
+            "r-5934dfd41e460685",
+            "r-d5f8965387a86c35",
+            "r-fe63e2cfca710df6"
+          ],
+          "hard_parent": false,
+          "id": "a-01b9350e439be7ff",
+          "resource": "svc-fixture",
+          "success": false
+        }
+      ],
+      "contract": {
+        "actions_complete": true,
+        "basis": "fixture_verified",
+        "owners_complete": true,
+        "single_action_per_request": true
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": true,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": true,
+        "order_ok": true,
+        "rule_empty": true,
+        "tcp_failed": true
+      },
+      "query": "r-5934dfd41e460685",
+      "requests": [
+        {
+          "id": "r-5934dfd41e460685",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-d5f8965387a86c35",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-fe63e2cfca710df6",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-02076afdb944bece",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-488e024a6a0ae181",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-08b9b649cba5fa6d",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        }
+      ],
+      "requirement": {
+        "allows_target": true,
+        "applicable": true,
+        "kind": "fixture",
+        "source": "fixture:declared-rule"
+      }
+    }
+  },
+  "H19": {
+    "expected": {
+      "authorization": "CONFORMS",
+      "effect": "ACTION_ONLY",
+      "may_success": true,
+      "must_success": true,
+      "processing": "CONSUMED",
+      "status": "OK"
+    },
+    "frozen_input_sha256": "5c8fbd8774ae13fc050c9ddd878b94971ce8234d7155435959ac7f4db8fc44e0",
+    "input": {
+      "actions": [
+        {
+          "candidates": [
+            "r-6b74124ad42cc4ee",
+            "r-c94cdeb4564eee5b"
+          ],
+          "coarse_candidates": [
+            "r-6b74124ad42cc4ee",
+            "r-96f5e91e4b1c9d55",
+            "r-b090dbfd24feb50a",
+            "r-c94cdeb4564eee5b"
+          ],
+          "hard_parent": false,
+          "id": "a-30fa3b6f6643dfa6",
+          "resource": "svc-fixture",
+          "success": true
+        },
+        {
+          "candidates": [
+            "r-96f5e91e4b1c9d55",
+            "r-b090dbfd24feb50a"
+          ],
+          "coarse_candidates": [
+            "r-6b74124ad42cc4ee",
+            "r-96f5e91e4b1c9d55",
+            "r-b090dbfd24feb50a",
+            "r-c94cdeb4564eee5b"
+          ],
+          "hard_parent": false,
+          "id": "a-748ba18b1d41adb8",
+          "resource": "svc-fixture",
+          "success": true
+        },
+        {
+          "candidates": [
+            "r-6b74124ad42cc4ee",
+            "r-96f5e91e4b1c9d55"
+          ],
+          "coarse_candidates": [
+            "r-6b74124ad42cc4ee",
+            "r-96f5e91e4b1c9d55",
+            "r-b090dbfd24feb50a",
+            "r-c94cdeb4564eee5b"
+          ],
+          "hard_parent": false,
+          "id": "a-d917172f89f7ee82",
+          "resource": "svc-fixture",
+          "success": true
+        },
+        {
+          "candidates": [
+            "r-b090dbfd24feb50a",
+            "r-c94cdeb4564eee5b"
+          ],
+          "coarse_candidates": [
+            "r-6b74124ad42cc4ee",
+            "r-96f5e91e4b1c9d55",
+            "r-b090dbfd24feb50a",
+            "r-c94cdeb4564eee5b"
+          ],
+          "hard_parent": false,
+          "id": "a-cd899069ac1c0991",
+          "resource": "svc-fixture",
+          "success": true
+        }
+      ],
+      "contract": {
+        "actions_complete": true,
+        "basis": "fixture_verified",
+        "owners_complete": true,
+        "single_action_per_request": true
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": true,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": true,
+        "order_ok": true,
+        "rule_empty": true,
+        "tcp_failed": true
+      },
+      "query": "r-b090dbfd24feb50a",
+      "requests": [
+        {
+          "id": "r-b090dbfd24feb50a",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-c94cdeb4564eee5b",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-6b74124ad42cc4ee",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-96f5e91e4b1c9d55",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        }
+      ],
+      "requirement": {
+        "allows_target": true,
+        "applicable": true,
+        "kind": "fixture",
+        "source": "fixture:declared-rule"
+      }
+    }
+  },
+  "H20": {
+    "expected": {
+      "authorization": "UNKNOWN",
+      "effect": "UNKNOWN",
+      "may_success": true,
+      "must_success": false,
+      "processing": "CONSUMED",
+      "status": "OK"
+    },
+    "frozen_input_sha256": "1d88c1608a8ee3ed53805333475fa6ff848312da8784b770b85ce884d3ec2736",
+    "input": {
+      "actions": [
+        {
+          "candidates": [
+            "r-445cb154178fc2a4",
+            "r-76fd22ae1de2cdb2"
+          ],
+          "coarse_candidates": [
+            "r-445cb154178fc2a4",
+            "r-76fd22ae1de2cdb2",
+            "r-cd0d2b6652f59433",
+            "r-f67c2e7510c380c4"
+          ],
+          "hard_parent": false,
+          "id": "a-3672f47fd9739d7b",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-445cb154178fc2a4",
+            "r-cd0d2b6652f59433"
+          ],
+          "coarse_candidates": [
+            "r-445cb154178fc2a4",
+            "r-76fd22ae1de2cdb2",
+            "r-cd0d2b6652f59433",
+            "r-f67c2e7510c380c4"
+          ],
+          "hard_parent": false,
+          "id": "a-1263e4d7f6f28740",
+          "resource": "svc-fixture",
+          "success": false
+        }
+      ],
+      "contract": {
+        "actions_complete": false,
+        "basis": "fixture_verified",
+        "owners_complete": true,
+        "single_action_per_request": true
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": true,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": true,
+        "order_ok": true,
+        "rule_empty": true,
+        "tcp_failed": true
+      },
+      "query": "r-f67c2e7510c380c4",
+      "requests": [
+        {
+          "id": "r-cd0d2b6652f59433",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-445cb154178fc2a4",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-76fd22ae1de2cdb2",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-f67c2e7510c380c4",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        }
+      ],
+      "requirement": {
+        "allows_target": true,
+        "applicable": true,
+        "kind": "fixture",
+        "source": "fixture:declared-rule"
+      }
+    }
+  },
+  "H21": {
+    "expected": {
+      "authorization": "CONFORMS",
+      "effect": "REOPENED",
+      "may_success": true,
+      "must_success": true,
+      "processing": "CONSUMED",
+      "status": "OK"
+    },
+    "frozen_input_sha256": "5755f70d6430f1eb04de2a8e0e0b6a9fce7ba7e4da5bdd18f85d6beb8a334aae",
+    "input": {
+      "actions": [
+        {
+          "candidates": [
+            "r-215da579e976e35c",
+            "r-abceb20875d074b1",
+            "r-d118f71263519676"
+          ],
+          "coarse_candidates": [
+            "r-0fef75a3947385a5",
+            "r-215da579e976e35c",
+            "r-abceb20875d074b1",
+            "r-d118f71263519676"
+          ],
+          "hard_parent": false,
+          "id": "a-d46fecce8e0f3f8a",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-215da579e976e35c",
+            "r-abceb20875d074b1",
+            "r-d118f71263519676"
+          ],
+          "coarse_candidates": [
+            "r-0fef75a3947385a5",
+            "r-215da579e976e35c",
+            "r-abceb20875d074b1",
+            "r-d118f71263519676"
+          ],
+          "hard_parent": false,
+          "id": "a-86367c4676e3e397",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-215da579e976e35c",
+            "r-d118f71263519676"
+          ],
+          "coarse_candidates": [
+            "r-0fef75a3947385a5",
+            "r-215da579e976e35c",
+            "r-abceb20875d074b1",
+            "r-d118f71263519676"
+          ],
+          "hard_parent": false,
+          "id": "a-36aca6763ff29dc6",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-0fef75a3947385a5",
+            "r-abceb20875d074b1"
+          ],
+          "coarse_candidates": [
+            "r-0fef75a3947385a5",
+            "r-215da579e976e35c",
+            "r-abceb20875d074b1",
+            "r-d118f71263519676"
+          ],
+          "hard_parent": false,
+          "id": "a-ed5a0a87b2457884",
+          "resource": "svc-fixture",
+          "success": true
+        }
+      ],
+      "contract": {
+        "actions_complete": true,
+        "basis": "fixture_verified",
+        "owners_complete": true,
+        "single_action_per_request": true
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": true,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": true,
+        "order_ok": true,
+        "rule_empty": true,
+        "tcp_failed": true
+      },
+      "query": "r-0fef75a3947385a5",
+      "requests": [
+        {
+          "id": "r-0fef75a3947385a5",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-215da579e976e35c",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-d118f71263519676",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-abceb20875d074b1",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        }
+      ],
+      "requirement": {
+        "allows_target": true,
+        "applicable": true,
+        "kind": "fixture",
+        "source": "fixture:declared-rule"
+      }
+    }
+  },
+  "H22": {
+    "expected": {
+      "authorization": "UNKNOWN",
+      "effect": "UNKNOWN",
+      "may_success": true,
+      "must_success": false,
+      "processing": "CONSUMED",
+      "status": "OK"
+    },
+    "frozen_input_sha256": "534fc231160a0cc161f460360c5a4522d965240264660a3dabf662af0ebd5798",
+    "input": {
+      "actions": [
+        {
+          "candidates": [
+            "r-9fcc2ba9247955ec",
+            "r-b575002acbb1db7f"
+          ],
+          "coarse_candidates": [
+            "r-94386f7fb490554e",
+            "r-9fcc2ba9247955ec",
+            "r-b575002acbb1db7f",
+            "r-eebbf7b4ed975b5a"
+          ],
+          "hard_parent": false,
+          "id": "a-9b696378350bd269",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-9fcc2ba9247955ec",
+            "r-eebbf7b4ed975b5a"
+          ],
+          "coarse_candidates": [
+            "r-94386f7fb490554e",
+            "r-9fcc2ba9247955ec",
+            "r-b575002acbb1db7f",
+            "r-eebbf7b4ed975b5a"
+          ],
+          "hard_parent": false,
+          "id": "a-bafe72550fbf8ce2",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-94386f7fb490554e",
+            "r-eebbf7b4ed975b5a"
+          ],
+          "coarse_candidates": [
+            "r-94386f7fb490554e",
+            "r-9fcc2ba9247955ec",
+            "r-b575002acbb1db7f",
+            "r-eebbf7b4ed975b5a"
+          ],
+          "hard_parent": false,
+          "id": "a-17c0a7b507f6cf3f",
+          "resource": "svc-fixture",
+          "success": true
+        },
+        {
+          "candidates": [
+            "r-94386f7fb490554e",
+            "r-b575002acbb1db7f"
+          ],
+          "coarse_candidates": [
+            "r-94386f7fb490554e",
+            "r-9fcc2ba9247955ec",
+            "r-b575002acbb1db7f",
+            "r-eebbf7b4ed975b5a"
+          ],
+          "hard_parent": false,
+          "id": "a-63d3b3ad79462627",
+          "resource": "svc-fixture",
+          "success": false
+        }
+      ],
+      "contract": {
+        "actions_complete": true,
+        "basis": "fixture_verified",
+        "owners_complete": true,
+        "single_action_per_request": true
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": true,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": true,
+        "order_ok": true,
+        "rule_empty": true,
+        "tcp_failed": true
+      },
+      "query": "r-eebbf7b4ed975b5a",
+      "requests": [
+        {
+          "id": "r-eebbf7b4ed975b5a",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-94386f7fb490554e",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-9fcc2ba9247955ec",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-b575002acbb1db7f",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        }
+      ],
+      "requirement": {
+        "allows_target": true,
+        "applicable": true,
+        "kind": "fixture",
+        "source": "fixture:declared-rule"
+      }
+    }
+  },
+  "H23": {
+    "expected": {
+      "authorization": "CONFLICT",
+      "effect": "CONFLICT",
+      "may_success": null,
+      "must_success": null,
+      "processing": "CONFLICT",
+      "status": "CONFLICT"
+    },
+    "frozen_input_sha256": "758bd8b2f563df5532c06e6e4d79baf3333cc3099b37df236ad0117658303dc4",
+    "input": {
+      "actions": [
+        {
+          "candidates": [
+            "r-21ce42c67c63eaa9",
+            "r-a4dfdc33e4a0ef30"
+          ],
+          "coarse_candidates": [
+            "r-21ce42c67c63eaa9",
+            "r-31e692a8f077fc4b",
+            "r-7cf05658485ec196",
+            "r-7facad840e647762",
+            "r-a4dfdc33e4a0ef30"
+          ],
+          "hard_parent": false,
+          "id": "a-2c0b8a1375b222bc",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-7facad840e647762"
+          ],
+          "coarse_candidates": [
+            "r-21ce42c67c63eaa9",
+            "r-31e692a8f077fc4b",
+            "r-7cf05658485ec196",
+            "r-7facad840e647762",
+            "r-a4dfdc33e4a0ef30"
+          ],
+          "hard_parent": true,
+          "id": "a-175c497b990d54f5",
+          "resource": "svc-fixture",
+          "success": true
+        },
+        {
+          "candidates": [
+            "r-7facad840e647762"
+          ],
+          "coarse_candidates": [
+            "r-21ce42c67c63eaa9",
+            "r-31e692a8f077fc4b",
+            "r-7cf05658485ec196",
+            "r-7facad840e647762",
+            "r-a4dfdc33e4a0ef30"
+          ],
+          "hard_parent": true,
+          "id": "a-2a802f29d8d4cdbb",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-7cf05658485ec196",
+            "r-a4dfdc33e4a0ef30"
+          ],
+          "coarse_candidates": [
+            "r-21ce42c67c63eaa9",
+            "r-31e692a8f077fc4b",
+            "r-7cf05658485ec196",
+            "r-7facad840e647762",
+            "r-a4dfdc33e4a0ef30"
+          ],
+          "hard_parent": false,
+          "id": "a-be07ce3eee154555",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-21ce42c67c63eaa9",
+            "r-31e692a8f077fc4b"
+          ],
+          "coarse_candidates": [
+            "r-21ce42c67c63eaa9",
+            "r-31e692a8f077fc4b",
+            "r-7cf05658485ec196",
+            "r-7facad840e647762",
+            "r-a4dfdc33e4a0ef30"
+          ],
+          "hard_parent": false,
+          "id": "a-349d458a2e829200",
+          "resource": "svc-fixture",
+          "success": false
+        }
+      ],
+      "contract": {
+        "actions_complete": true,
+        "basis": "fixture_verified",
+        "owners_complete": true,
+        "single_action_per_request": true
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": true,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": true,
+        "order_ok": true,
+        "rule_empty": true,
+        "tcp_failed": true
+      },
+      "query": "r-7cf05658485ec196",
+      "requests": [
+        {
+          "id": "r-a4dfdc33e4a0ef30",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-21ce42c67c63eaa9",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-31e692a8f077fc4b",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-7facad840e647762",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-7cf05658485ec196",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        }
+      ],
+      "requirement": {
+        "allows_target": false,
+        "applicable": true,
+        "kind": "fixture",
+        "source": "fixture:declared-rule"
+      }
+    }
+  },
+  "H24": {
+    "expected": {
+      "authorization": "CONFLICT",
+      "effect": "CONFLICT",
+      "may_success": null,
+      "must_success": null,
+      "processing": "CONFLICT",
+      "status": "CONFLICT"
+    },
+    "frozen_input_sha256": "02c2ab32078661523fe66a36699c39b4b8d1a603e20bef06987144921a083b1a",
+    "input": {
+      "actions": [
+        {
+          "candidates": [
+            "r-b7f8794964b657cd",
+            "r-c19d9bd921c5b868"
+          ],
+          "coarse_candidates": [
+            "r-2f2d77a744dc1e1b",
+            "r-7214b2ae85374dba",
+            "r-b7f8794964b657cd",
+            "r-c19d9bd921c5b868"
+          ],
+          "hard_parent": false,
+          "id": "a-8e5b9b33e5fe6358",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-2f2d77a744dc1e1b"
+          ],
+          "coarse_candidates": [
+            "r-2f2d77a744dc1e1b",
+            "r-7214b2ae85374dba",
+            "r-b7f8794964b657cd",
+            "r-c19d9bd921c5b868"
+          ],
+          "hard_parent": true,
+          "id": "a-c59db036db3494ac",
+          "resource": "svc-fixture",
+          "success": false
+        },
+        {
+          "candidates": [
+            "r-2f2d77a744dc1e1b"
+          ],
+          "coarse_candidates": [
+            "r-2f2d77a744dc1e1b",
+            "r-7214b2ae85374dba",
+            "r-b7f8794964b657cd",
+            "r-c19d9bd921c5b868"
+          ],
+          "hard_parent": true,
+          "id": "a-9f63c7b7a373ef4f",
+          "resource": "svc-fixture",
+          "success": true
+        },
+        {
+          "candidates": [
+            "r-7214b2ae85374dba",
+            "r-c19d9bd921c5b868"
+          ],
+          "coarse_candidates": [
+            "r-2f2d77a744dc1e1b",
+            "r-7214b2ae85374dba",
+            "r-b7f8794964b657cd",
+            "r-c19d9bd921c5b868"
+          ],
+          "hard_parent": false,
+          "id": "a-771528e36c35220b",
+          "resource": "svc-fixture",
+          "success": false
+        }
+      ],
+      "contract": {
+        "actions_complete": true,
+        "basis": "fixture_verified",
+        "owners_complete": true,
+        "single_action_per_request": true
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": true,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": true,
+        "order_ok": true,
+        "rule_empty": true,
+        "tcp_failed": true
+      },
+      "query": "r-b7f8794964b657cd",
+      "requests": [
+        {
+          "id": "r-c19d9bd921c5b868",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-2f2d77a744dc1e1b",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-b7f8794964b657cd",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        },
+        {
+          "id": "r-7214b2ae85374dba",
+          "processing": "CONSUMED",
+          "resource": "svc-fixture"
+        }
+      ],
+      "requirement": {
+        "allows_target": true,
+        "applicable": true,
+        "kind": "fixture",
+        "source": "fixture:declared-rule"
+      }
+    }
+  }
+}

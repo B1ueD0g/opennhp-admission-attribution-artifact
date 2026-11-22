@@ -1,0 +1,2279 @@
+{
+  "sealed-01": {
+    "canonical_input_sha256": "72fff9501ce66f92e7d66e85231934e4d69ab8d3075c3b38bc8b8deb0541e9ee",
+    "expected": {
+      "authorization": "CONFORMS",
+      "effect": "NO_TARGET_ACTION",
+      "may_success": false,
+      "must_success": false,
+      "processing": "REJECTED",
+      "status": "OK"
+    },
+    "frozen_fixture_sha256": "b8a5641c01ddf80f2f46b4cd87d8361ea4ef91c2a65dcf4b5bd94aac5dffe0dd",
+    "input": {
+      "actions": [
+        {
+          "candidates": [
+            "p",
+            "r"
+          ],
+          "coarse_candidates": [
+            "q",
+            "p",
+            "r",
+            "s"
+          ],
+          "hard_parent": false,
+          "id": "a",
+          "resource": "svc-main",
+          "success": true
+        },
+        {
+          "candidates": [
+            "p",
+            "r"
+          ],
+          "coarse_candidates": [
+            "q",
+            "p",
+            "r",
+            "s"
+          ],
+          "hard_parent": false,
+          "id": "b",
+          "resource": "svc-main",
+          "success": true
+        },
+        {
+          "candidates": [
+            "s"
+          ],
+          "coarse_candidates": [
+            "q",
+            "p",
+            "r",
+            "s"
+          ],
+          "hard_parent": true,
+          "id": "c",
+          "resource": "svc-main",
+          "success": false
+        }
+      ],
+      "contract": {
+        "actions_complete": true,
+        "basis": "fixture_verified",
+        "owners_complete": true,
+        "single_action_per_request": true
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": true,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": true,
+        "order_ok": true,
+        "rule_empty": false,
+        "tcp_failed": true
+      },
+      "query": "q",
+      "requests": [
+        {
+          "connection": "connection-q",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "q",
+          "processing": "REJECTED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        },
+        {
+          "connection": "connection-p",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "p",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        },
+        {
+          "connection": "connection-r",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "r",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        },
+        {
+          "connection": "connection-s",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "s",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        }
+      ],
+      "requirement": {
+        "allows_target": false,
+        "applicable": true,
+        "kind": "fixture",
+        "source": "fixture-policy-v3: target successful operation permission"
+      }
+    }
+  },
+  "sealed-02": {
+    "canonical_input_sha256": "fd6f7cc9f1007880474c59f778460aeda2bb9c763f9c294692c105ff25855070",
+    "expected": {
+      "authorization": "CONFORMS",
+      "effect": "NO_TARGET_ACTION",
+      "may_success": false,
+      "must_success": false,
+      "processing": "REJECTED",
+      "status": "OK"
+    },
+    "frozen_fixture_sha256": "9d0c9a055dbed39a22110177b2475c76365fe554086dd04835091ddf541876cf",
+    "input": {
+      "actions": [
+        {
+          "candidates": [
+            "p",
+            "r"
+          ],
+          "coarse_candidates": [
+            "q",
+            "p",
+            "r"
+          ],
+          "hard_parent": false,
+          "id": "a",
+          "resource": "svc-main",
+          "success": null
+        },
+        {
+          "candidates": [
+            "p",
+            "r"
+          ],
+          "coarse_candidates": [
+            "q",
+            "p",
+            "r"
+          ],
+          "hard_parent": false,
+          "id": "b",
+          "resource": "svc-main",
+          "success": false
+        }
+      ],
+      "contract": {
+        "actions_complete": true,
+        "basis": "fixture_verified",
+        "owners_complete": true,
+        "single_action_per_request": true
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": true,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": true,
+        "order_ok": null,
+        "rule_empty": true,
+        "tcp_failed": true
+      },
+      "query": "q",
+      "requests": [
+        {
+          "connection": "connection-q",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "q",
+          "processing": "REJECTED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        },
+        {
+          "connection": "connection-p",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "p",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        },
+        {
+          "connection": "connection-r",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "r",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        }
+      ],
+      "requirement": {
+        "allows_target": false,
+        "applicable": true,
+        "kind": "fixture",
+        "source": "fixture-policy-v3: target successful operation permission"
+      }
+    }
+  },
+  "sealed-03": {
+    "canonical_input_sha256": "89a8ba528fc9f18fc7245059cc1504da38c4a9a241fd45ded9af39ddc30a75c1",
+    "expected": {
+      "authorization": "CONFLICT",
+      "effect": "CONFLICT",
+      "may_success": null,
+      "must_success": null,
+      "processing": "CONFLICT",
+      "status": "CONFLICT"
+    },
+    "frozen_fixture_sha256": "a91811d32c981d0afd2dc319bc891534bfb1779f05a4a314e75459ab48fc925a",
+    "input": {
+      "actions": [
+        {
+          "candidates": [
+            "q"
+          ],
+          "coarse_candidates": [
+            "q",
+            "p"
+          ],
+          "hard_parent": true,
+          "id": "a",
+          "resource": "svc-main",
+          "success": true
+        },
+        {
+          "candidates": [
+            "p"
+          ],
+          "coarse_candidates": [
+            "q",
+            "p"
+          ],
+          "hard_parent": true,
+          "id": "b",
+          "resource": "svc-main",
+          "success": true
+        }
+      ],
+      "contract": {
+        "actions_complete": true,
+        "basis": "fixture_verified",
+        "owners_complete": true,
+        "single_action_per_request": true
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": true,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": true,
+        "order_ok": true,
+        "rule_empty": true,
+        "tcp_failed": true
+      },
+      "query": "q",
+      "requests": [
+        {
+          "connection": "connection-q",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "q",
+          "processing": "REJECTED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        },
+        {
+          "connection": "connection-p",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "p",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        }
+      ],
+      "requirement": {
+        "allows_target": false,
+        "applicable": true,
+        "kind": "fixture",
+        "source": "fixture-policy-v3: target successful operation permission"
+      }
+    }
+  },
+  "sealed-04": {
+    "canonical_input_sha256": "fc1a989514e2e6a5a88202ee0e8b93d146e4ae42694b35f39d301f2e9545f435",
+    "expected": {
+      "authorization": "CONFORMS",
+      "effect": "NO_TARGET_ACTION",
+      "may_success": false,
+      "must_success": false,
+      "processing": "REJECTED",
+      "status": "OK"
+    },
+    "frozen_fixture_sha256": "65e4c50ccdc0824f0f0816c2962aa18e6a33fd4406211c35cbd788d64951c8fe",
+    "input": {
+      "actions": [
+        {
+          "candidates": [
+            "q"
+          ],
+          "coarse_candidates": [
+            "q"
+          ],
+          "hard_parent": false,
+          "id": "a",
+          "resource": "svc-main",
+          "success": true
+        }
+      ],
+      "contract": {
+        "actions_complete": true,
+        "basis": "fixture_verified",
+        "owners_complete": false,
+        "single_action_per_request": true
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": true,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": true,
+        "order_ok": true,
+        "rule_empty": true,
+        "tcp_failed": false
+      },
+      "query": "q",
+      "requests": [
+        {
+          "connection": "connection-q",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "q",
+          "processing": "REJECTED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        }
+      ],
+      "requirement": {
+        "allows_target": false,
+        "applicable": true,
+        "kind": "fixture",
+        "source": "fixture-policy-v3: target successful operation permission"
+      }
+    }
+  },
+  "sealed-05": {
+    "canonical_input_sha256": "5bc17660e7025de867113510cece6b9c3988be4ae569aaeb1175e4cfeda1ab2c",
+    "expected": {
+      "authorization": "DEVIATES",
+      "effect": "ACTION_ONLY",
+      "may_success": true,
+      "must_success": true,
+      "processing": "CONSUMED",
+      "status": "OK"
+    },
+    "frozen_fixture_sha256": "4e20936297ff35597db7a29396522005036d84414b7031033f42e98711643258",
+    "input": {
+      "actions": [
+        {
+          "candidates": [
+            "p",
+            "r"
+          ],
+          "coarse_candidates": [
+            "q",
+            "p",
+            "r"
+          ],
+          "hard_parent": false,
+          "id": "a",
+          "resource": "svc-main",
+          "success": false
+        },
+        {
+          "candidates": [
+            "p",
+            "r"
+          ],
+          "coarse_candidates": [
+            "q",
+            "p",
+            "r"
+          ],
+          "hard_parent": false,
+          "id": "b",
+          "resource": "svc-main",
+          "success": false
+        },
+        {
+          "candidates": [
+            "q",
+            "p",
+            "r"
+          ],
+          "coarse_candidates": [
+            "q",
+            "p",
+            "r"
+          ],
+          "hard_parent": false,
+          "id": "c",
+          "resource": "svc-main",
+          "success": true
+        }
+      ],
+      "contract": {
+        "actions_complete": true,
+        "basis": "fixture_verified",
+        "owners_complete": true,
+        "single_action_per_request": true
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": true,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": true,
+        "order_ok": true,
+        "rule_empty": false,
+        "tcp_failed": true
+      },
+      "query": "q",
+      "requests": [
+        {
+          "connection": "connection-q",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "q",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        },
+        {
+          "connection": "connection-p",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "p",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        },
+        {
+          "connection": "connection-r",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "r",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        }
+      ],
+      "requirement": {
+        "allows_target": false,
+        "applicable": true,
+        "kind": "fixture",
+        "source": "fixture-policy-v3: target successful operation permission"
+      }
+    }
+  },
+  "sealed-06": {
+    "canonical_input_sha256": "b71d40856cc1a6d37cf13113aa3861d75f1190c7b0d403429d6d956b3512ae9f",
+    "expected": {
+      "authorization": "CONFORMS",
+      "effect": "ACTION_ONLY",
+      "may_success": true,
+      "must_success": true,
+      "processing": "CONSUMED",
+      "status": "OK"
+    },
+    "frozen_fixture_sha256": "139fe7c433545b9f968c11463ed06445bfa3a36fd05231601f4d9a66d5950b6b",
+    "input": {
+      "actions": [
+        {
+          "candidates": [
+            "q",
+            "p"
+          ],
+          "coarse_candidates": [
+            "q",
+            "p",
+            "r"
+          ],
+          "hard_parent": false,
+          "id": "a",
+          "resource": "svc-main",
+          "success": true
+        },
+        {
+          "candidates": [
+            "p",
+            "r"
+          ],
+          "coarse_candidates": [
+            "q",
+            "p",
+            "r"
+          ],
+          "hard_parent": false,
+          "id": "b",
+          "resource": "svc-main",
+          "success": true
+        },
+        {
+          "candidates": [
+            "q",
+            "r"
+          ],
+          "coarse_candidates": [
+            "q",
+            "p",
+            "r"
+          ],
+          "hard_parent": false,
+          "id": "c",
+          "resource": "svc-main",
+          "success": true
+        }
+      ],
+      "contract": {
+        "actions_complete": true,
+        "basis": "fixture_verified",
+        "owners_complete": true,
+        "single_action_per_request": true
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": true,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": true,
+        "order_ok": true,
+        "rule_empty": true,
+        "tcp_failed": false
+      },
+      "query": "q",
+      "requests": [
+        {
+          "connection": "connection-q",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "q",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        },
+        {
+          "connection": "connection-p",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "p",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        },
+        {
+          "connection": "connection-r",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "r",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        }
+      ],
+      "requirement": {
+        "allows_target": true,
+        "applicable": true,
+        "kind": "fixture",
+        "source": "fixture-policy-v3: target successful operation permission"
+      }
+    }
+  },
+  "sealed-07": {
+    "canonical_input_sha256": "a5b9e8a82334300d2e056edd9fd72ca6132f4daad7b6197a13e9153f6c203721",
+    "expected": {
+      "authorization": "UNKNOWN",
+      "effect": "UNKNOWN",
+      "may_success": null,
+      "must_success": null,
+      "processing": "UNKNOWN",
+      "status": "OK"
+    },
+    "frozen_fixture_sha256": "264d80b2c170deefba8b839fbd5a09c7a733da7cad206aa520d2343596f42eff",
+    "input": {
+      "actions": [
+        {
+          "candidates": [
+            "q"
+          ],
+          "coarse_candidates": [
+            "q",
+            "p"
+          ],
+          "hard_parent": true,
+          "id": "a",
+          "resource": "svc-main",
+          "success": true
+        },
+        {
+          "candidates": [
+            "p"
+          ],
+          "coarse_candidates": [
+            "q",
+            "p"
+          ],
+          "hard_parent": true,
+          "id": "b",
+          "resource": "svc-main",
+          "success": false
+        }
+      ],
+      "contract": {
+        "actions_complete": true,
+        "basis": "fixture_verified",
+        "owners_complete": true,
+        "single_action_per_request": true
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": true,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": null,
+        "order_ok": true,
+        "rule_empty": true,
+        "tcp_failed": true
+      },
+      "query": "q",
+      "requests": [
+        {
+          "connection": "connection-q",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "q",
+          "processing": "UNKNOWN",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        },
+        {
+          "connection": "connection-p",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "p",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        }
+      ],
+      "requirement": {
+        "allows_target": false,
+        "applicable": true,
+        "kind": "fixture",
+        "source": "fixture-policy-v3: target successful operation permission"
+      }
+    }
+  },
+  "sealed-08": {
+    "canonical_input_sha256": "6fb706460d15dfd36523fbd17bb93c20329a86c34114096a6ab56fad7ed1a6a0",
+    "expected": {
+      "authorization": "DEVIATES",
+      "effect": "ACTION_ONLY",
+      "may_success": true,
+      "must_success": true,
+      "processing": "CONSUMED",
+      "status": "OK"
+    },
+    "frozen_fixture_sha256": "01d62317de09bf2d8661941b930f96549a3eabdb19e35c116784d608bf43f65d",
+    "input": {
+      "actions": [
+        {
+          "candidates": [
+            "q"
+          ],
+          "coarse_candidates": [
+            "q",
+            "p"
+          ],
+          "hard_parent": true,
+          "id": "a",
+          "resource": "svc-main",
+          "success": false
+        },
+        {
+          "candidates": [
+            "q"
+          ],
+          "coarse_candidates": [
+            "q",
+            "p"
+          ],
+          "hard_parent": true,
+          "id": "b",
+          "resource": "svc-main",
+          "success": true
+        },
+        {
+          "candidates": [
+            "p"
+          ],
+          "coarse_candidates": [
+            "q",
+            "p"
+          ],
+          "hard_parent": true,
+          "id": "c",
+          "resource": "svc-main",
+          "success": false
+        }
+      ],
+      "contract": {
+        "actions_complete": true,
+        "basis": "fixture_verified",
+        "owners_complete": true,
+        "single_action_per_request": false
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": true,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": true,
+        "order_ok": true,
+        "rule_empty": false,
+        "tcp_failed": true
+      },
+      "query": "q",
+      "requests": [
+        {
+          "connection": "connection-q",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "q",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        },
+        {
+          "connection": "connection-p",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "p",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        }
+      ],
+      "requirement": {
+        "allows_target": false,
+        "applicable": true,
+        "kind": "fixture",
+        "source": "fixture-policy-v3: target successful operation permission"
+      }
+    }
+  },
+  "sealed-09": {
+    "canonical_input_sha256": "2b55bd0f24966fedb20441c068bb4f1369b1e0b8819a66065a47d8f31e18e107",
+    "expected": {
+      "authorization": "CONFORMS",
+      "effect": "REOPENED",
+      "may_success": true,
+      "must_success": true,
+      "processing": "CONSUMED",
+      "status": "OK"
+    },
+    "frozen_fixture_sha256": "868e6127291d3abc8ade6af0c2d6670e3e4c72d8c072d8f2b251a9d098151a41",
+    "input": {
+      "actions": [
+        {
+          "candidates": [
+            "p",
+            "r"
+          ],
+          "coarse_candidates": [
+            "q",
+            "p",
+            "r"
+          ],
+          "hard_parent": false,
+          "id": "a",
+          "resource": "svc-main",
+          "success": false
+        },
+        {
+          "candidates": [
+            "p",
+            "r"
+          ],
+          "coarse_candidates": [
+            "q",
+            "p",
+            "r"
+          ],
+          "hard_parent": false,
+          "id": "b",
+          "resource": "svc-main",
+          "success": false
+        },
+        {
+          "candidates": [
+            "q",
+            "p",
+            "r"
+          ],
+          "coarse_candidates": [
+            "q",
+            "p",
+            "r"
+          ],
+          "hard_parent": false,
+          "id": "c",
+          "resource": "svc-main",
+          "success": true
+        }
+      ],
+      "contract": {
+        "actions_complete": true,
+        "basis": "fixture_verified",
+        "owners_complete": true,
+        "single_action_per_request": true
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": true,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": true,
+        "order_ok": true,
+        "rule_empty": true,
+        "tcp_failed": true
+      },
+      "query": "q",
+      "requests": [
+        {
+          "connection": "connection-q",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "q",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        },
+        {
+          "connection": "connection-p",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "p",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        },
+        {
+          "connection": "connection-r",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "r",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        }
+      ],
+      "requirement": {
+        "allows_target": true,
+        "applicable": true,
+        "kind": "fixture",
+        "source": "fixture-policy-v3: target successful operation permission"
+      }
+    }
+  },
+  "sealed-10": {
+    "canonical_input_sha256": "40d9828dc99d7289305111c27dee065fa6e343ccf7d2594c4b5707cacd866591",
+    "expected": {
+      "authorization": "DEVIATES",
+      "effect": "ACTION_ONLY",
+      "may_success": true,
+      "must_success": true,
+      "processing": "CONSUMED",
+      "status": "OK"
+    },
+    "frozen_fixture_sha256": "98d4d49d83b707d02b7ded0fee32e76ffc846688d403f7bef180eaeb852f03cf",
+    "input": {
+      "actions": [
+        {
+          "candidates": [
+            "q",
+            "p"
+          ],
+          "coarse_candidates": [
+            "q",
+            "p"
+          ],
+          "hard_parent": false,
+          "id": "a",
+          "resource": "svc-main",
+          "success": true
+        },
+        {
+          "candidates": [
+            "q",
+            "p"
+          ],
+          "coarse_candidates": [
+            "q",
+            "p"
+          ],
+          "hard_parent": false,
+          "id": "b",
+          "resource": "svc-main",
+          "success": true
+        }
+      ],
+      "contract": {
+        "actions_complete": true,
+        "basis": "fixture_verified",
+        "owners_complete": true,
+        "single_action_per_request": true
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": true,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": true,
+        "order_ok": true,
+        "rule_empty": true,
+        "tcp_failed": true
+      },
+      "query": "q",
+      "requests": [
+        {
+          "connection": "connection-q",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "q",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        },
+        {
+          "connection": "connection-p",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "p",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        }
+      ],
+      "requirement": {
+        "allows_target": false,
+        "applicable": true,
+        "kind": "fixture",
+        "source": "fixture-policy-v3: target successful operation permission"
+      }
+    }
+  },
+  "sealed-11": {
+    "canonical_input_sha256": "ee3ed7d49f62600ba03c6c33fdb6070b63a532800e2c63601aafb339db1df150",
+    "expected": {
+      "authorization": "DEVIATES",
+      "effect": "REOPENED",
+      "may_success": true,
+      "must_success": true,
+      "processing": "CONSUMED",
+      "status": "OK"
+    },
+    "frozen_fixture_sha256": "8e63b9f32ccc78544e2fdb1059f6431f2f032bf00715bac1bc0c1838ed0830f5",
+    "input": {
+      "actions": [
+        {
+          "candidates": [
+            "q"
+          ],
+          "coarse_candidates": [
+            "q"
+          ],
+          "hard_parent": true,
+          "id": "a",
+          "resource": "svc-main",
+          "success": true
+        },
+        {
+          "candidates": [
+            "p"
+          ],
+          "coarse_candidates": [
+            "p"
+          ],
+          "hard_parent": true,
+          "id": "b",
+          "resource": "svc-other",
+          "success": true
+        }
+      ],
+      "contract": {
+        "actions_complete": true,
+        "basis": "fixture_verified",
+        "owners_complete": true,
+        "single_action_per_request": true
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": true,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": true,
+        "order_ok": true,
+        "rule_empty": true,
+        "tcp_failed": true
+      },
+      "query": "q",
+      "requests": [
+        {
+          "connection": "connection-q",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "q",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        },
+        {
+          "connection": "connection-p",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "p",
+          "processing": "CONSUMED",
+          "resource": "svc-other",
+          "wire_tx": "reused-wire-tx-17"
+        }
+      ],
+      "requirement": {
+        "allows_target": false,
+        "applicable": true,
+        "kind": "fixture",
+        "source": "fixture-policy-v3: target successful operation permission"
+      }
+    }
+  },
+  "sealed-12": {
+    "canonical_input_sha256": "1b255eb92344d394a2128a54828e09de02f04a1d732eec435c224b2f177b4af8",
+    "expected": {
+      "authorization": "DEVIATES",
+      "effect": "ACTION_ONLY",
+      "may_success": true,
+      "must_success": true,
+      "processing": "CONSUMED",
+      "status": "OK"
+    },
+    "frozen_fixture_sha256": "c568534559b3572dea3d2cef6a3054d302651fde959faae1195f6fa473533aae",
+    "input": {
+      "actions": [
+        {
+          "candidates": [
+            "q"
+          ],
+          "coarse_candidates": [
+            "q",
+            "p"
+          ],
+          "hard_parent": true,
+          "id": "a",
+          "resource": "svc-main",
+          "success": true
+        },
+        {
+          "candidates": [
+            "p"
+          ],
+          "coarse_candidates": [
+            "q",
+            "p"
+          ],
+          "hard_parent": true,
+          "id": "b",
+          "resource": "svc-main",
+          "success": false
+        }
+      ],
+      "contract": {
+        "actions_complete": true,
+        "basis": "fixture_verified",
+        "owners_complete": true,
+        "single_action_per_request": true
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": true,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": true,
+        "order_ok": null,
+        "rule_empty": true,
+        "tcp_failed": true
+      },
+      "query": "q",
+      "requests": [
+        {
+          "connection": "connection-q",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "q",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        },
+        {
+          "connection": "connection-p",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "p",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        }
+      ],
+      "requirement": {
+        "allows_target": false,
+        "applicable": true,
+        "kind": "fixture",
+        "source": "fixture-policy-v3: target successful operation permission"
+      }
+    }
+  },
+  "sealed-13": {
+    "canonical_input_sha256": "4defc055ead72d8411d5fc7e37987184a450999cc4c8ba1f1c4fc4f184dcbee0",
+    "expected": {
+      "authorization": "CONFORMS",
+      "effect": "NO_TARGET_ACTION",
+      "may_success": null,
+      "must_success": null,
+      "processing": "NO_TARGET_RECORD",
+      "status": "OK"
+    },
+    "frozen_fixture_sha256": "a0370bba46e1926c2065835c8cf9039acae3f220ad76b9e9faa6e6171c3d8767",
+    "input": {
+      "actions": [
+        {
+          "candidates": [
+            "p",
+            "r"
+          ],
+          "coarse_candidates": [
+            "p",
+            "r"
+          ],
+          "hard_parent": false,
+          "id": "a",
+          "resource": "svc-main",
+          "success": true
+        },
+        {
+          "candidates": [
+            "p",
+            "r"
+          ],
+          "coarse_candidates": [
+            "p",
+            "r"
+          ],
+          "hard_parent": false,
+          "id": "b",
+          "resource": "svc-main",
+          "success": true
+        }
+      ],
+      "contract": {
+        "actions_complete": true,
+        "basis": "fixture_verified",
+        "owners_complete": true,
+        "single_action_per_request": true
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": true,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": true,
+        "order_ok": true,
+        "rule_empty": true,
+        "tcp_failed": true
+      },
+      "query": "q",
+      "requests": [
+        {
+          "connection": "connection-p",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "p",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        },
+        {
+          "connection": "connection-r",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "r",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        }
+      ],
+      "requirement": {
+        "allows_target": false,
+        "applicable": true,
+        "kind": "fixture",
+        "source": "fixture-policy-v3: target successful operation permission"
+      }
+    }
+  },
+  "sealed-14": {
+    "canonical_input_sha256": "f424ed4e0d830c82ee9953be8cc5ef0e5f64da84248f448dfa8514d642500d05",
+    "expected": {
+      "authorization": "CONFORMS",
+      "effect": "NO_TARGET_ACTION",
+      "may_success": null,
+      "must_success": null,
+      "processing": "NO_TARGET_RECORD",
+      "status": "OK"
+    },
+    "frozen_fixture_sha256": "9755e92fee89e2b869f34b6e5417fbc26093a0383c815cd3a757c50da12d93ee",
+    "input": {
+      "actions": [
+        {
+          "candidates": [
+            "p",
+            "r"
+          ],
+          "coarse_candidates": [
+            "p",
+            "r",
+            "s"
+          ],
+          "hard_parent": false,
+          "id": "a",
+          "resource": "svc-main",
+          "success": true
+        },
+        {
+          "candidates": [
+            "p",
+            "r"
+          ],
+          "coarse_candidates": [
+            "p",
+            "r",
+            "s"
+          ],
+          "hard_parent": false,
+          "id": "b",
+          "resource": "svc-main",
+          "success": true
+        },
+        {
+          "candidates": [
+            "p",
+            "r",
+            "s"
+          ],
+          "coarse_candidates": [
+            "p",
+            "r",
+            "s"
+          ],
+          "hard_parent": false,
+          "id": "c",
+          "resource": "svc-main",
+          "success": true
+        }
+      ],
+      "contract": {
+        "actions_complete": true,
+        "basis": "fixture_verified",
+        "owners_complete": true,
+        "single_action_per_request": true
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": true,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": true,
+        "order_ok": true,
+        "rule_empty": true,
+        "tcp_failed": true
+      },
+      "query": "q",
+      "requests": [
+        {
+          "connection": "connection-p",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "p",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        },
+        {
+          "connection": "connection-r",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "r",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        },
+        {
+          "connection": "connection-s",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "s",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        }
+      ],
+      "requirement": {
+        "allows_target": false,
+        "applicable": true,
+        "kind": "fixture",
+        "source": "fixture-policy-v3: target successful operation permission"
+      }
+    }
+  },
+  "sealed-15": {
+    "canonical_input_sha256": "57c7ce49a581acc202d30960d1cc7e94c8e73e14bc3f6bbef1b03e9928679c0f",
+    "expected": {
+      "authorization": "UNKNOWN",
+      "effect": "UNKNOWN",
+      "may_success": null,
+      "must_success": null,
+      "processing": "UNKNOWN",
+      "status": "OK"
+    },
+    "frozen_fixture_sha256": "0ab6aec752ecb881fd506fbf4985ee5e2792715db7739327bd06a4f301c5dede",
+    "input": {
+      "actions": [
+        {
+          "candidates": [
+            "p",
+            "r"
+          ],
+          "coarse_candidates": [
+            "p",
+            "r"
+          ],
+          "hard_parent": false,
+          "id": "a",
+          "resource": "svc-main",
+          "success": true
+        }
+      ],
+      "contract": {
+        "actions_complete": true,
+        "basis": "fixture_verified",
+        "owners_complete": false,
+        "single_action_per_request": true
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": true,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": true,
+        "order_ok": true,
+        "rule_empty": true,
+        "tcp_failed": true
+      },
+      "query": "q",
+      "requests": [
+        {
+          "connection": "connection-p",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "p",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        },
+        {
+          "connection": "connection-r",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "r",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        }
+      ],
+      "requirement": {
+        "allows_target": false,
+        "applicable": true,
+        "kind": "fixture",
+        "source": "fixture-policy-v3: target successful operation permission"
+      }
+    }
+  },
+  "sealed-16": {
+    "canonical_input_sha256": "d7103f10446f4b8df991391818bd98a2ddf19cc1a48dc0a8d340e39684db3888",
+    "expected": {
+      "authorization": "CONFORMS",
+      "effect": "NO_TARGET_ACTION",
+      "may_success": null,
+      "must_success": null,
+      "processing": "NO_TARGET_RECORD",
+      "status": "OK"
+    },
+    "frozen_fixture_sha256": "2898ce7d1d79a1f86ece88560eb73ca947d3ac72c7f6e76d8ae07e3c38aea23f",
+    "input": {
+      "actions": [
+        {
+          "candidates": [
+            "p"
+          ],
+          "coarse_candidates": [
+            "p",
+            "r"
+          ],
+          "hard_parent": true,
+          "id": "a",
+          "resource": "svc-main",
+          "success": null
+        },
+        {
+          "candidates": [
+            "r"
+          ],
+          "coarse_candidates": [
+            "p",
+            "r"
+          ],
+          "hard_parent": true,
+          "id": "b",
+          "resource": "svc-main",
+          "success": null
+        }
+      ],
+      "contract": {
+        "actions_complete": true,
+        "basis": "fixture_verified",
+        "owners_complete": true,
+        "single_action_per_request": true
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": true,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": true,
+        "order_ok": true,
+        "rule_empty": true,
+        "tcp_failed": true
+      },
+      "query": "q",
+      "requests": [
+        {
+          "connection": "connection-p",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "p",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        },
+        {
+          "connection": "connection-r",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "r",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        }
+      ],
+      "requirement": {
+        "allows_target": false,
+        "applicable": true,
+        "kind": "fixture",
+        "source": "fixture-policy-v3: target successful operation permission"
+      }
+    }
+  },
+  "sealed-17": {
+    "canonical_input_sha256": "4fe295fbcd4d52bd52828735fa35715a9ba7bee9fc6a4e9d62246051ffe3e8fa",
+    "expected": {
+      "authorization": "DEVIATES",
+      "effect": "ACTION_ONLY",
+      "may_success": true,
+      "must_success": true,
+      "processing": "CONSUMED",
+      "status": "OK"
+    },
+    "frozen_fixture_sha256": "88a946f47286def71c9347634c7f7dc4e3f5bec63a869482fdb2de979c795979",
+    "input": {
+      "actions": [
+        {
+          "candidates": [
+            "p",
+            "r"
+          ],
+          "coarse_candidates": [
+            "q",
+            "p",
+            "r"
+          ],
+          "hard_parent": false,
+          "id": "a",
+          "resource": "svc-main",
+          "success": false
+        },
+        {
+          "candidates": [
+            "p",
+            "r"
+          ],
+          "coarse_candidates": [
+            "q",
+            "p",
+            "r"
+          ],
+          "hard_parent": false,
+          "id": "b",
+          "resource": "svc-main",
+          "success": false
+        },
+        {
+          "candidates": [
+            "q",
+            "p",
+            "r"
+          ],
+          "coarse_candidates": [
+            "q",
+            "p",
+            "r"
+          ],
+          "hard_parent": false,
+          "id": "c",
+          "resource": "svc-main",
+          "success": true
+        }
+      ],
+      "contract": {
+        "actions_complete": false,
+        "basis": "fixture_verified",
+        "owners_complete": true,
+        "single_action_per_request": true
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": true,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": true,
+        "order_ok": true,
+        "rule_empty": true,
+        "tcp_failed": true
+      },
+      "query": "q",
+      "requests": [
+        {
+          "connection": "connection-q",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "q",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        },
+        {
+          "connection": "connection-p",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "p",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        },
+        {
+          "connection": "connection-r",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "r",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        }
+      ],
+      "requirement": {
+        "allows_target": false,
+        "applicable": true,
+        "kind": "fixture",
+        "source": "fixture-policy-v3: target successful operation permission"
+      }
+    }
+  },
+  "sealed-18": {
+    "canonical_input_sha256": "3b9a8b530c79fc147793a75cf13e09cfaee5ed3ebe275d6372b4832ddd310606",
+    "expected": {
+      "authorization": "DEVIATES",
+      "effect": "ACTION_ONLY",
+      "may_success": true,
+      "must_success": true,
+      "processing": "CONSUMED",
+      "status": "OK"
+    },
+    "frozen_fixture_sha256": "9c4d52fde4c6ac5391f48d0204f1e35e5c413386fa2510f518f90e91c5be257a",
+    "input": {
+      "actions": [
+        {
+          "candidates": [
+            "q"
+          ],
+          "coarse_candidates": [
+            "q",
+            "p"
+          ],
+          "hard_parent": true,
+          "id": "a",
+          "resource": "svc-main",
+          "success": true
+        },
+        {
+          "candidates": [
+            "p"
+          ],
+          "coarse_candidates": [
+            "q",
+            "p"
+          ],
+          "hard_parent": true,
+          "id": "b",
+          "resource": "svc-main",
+          "success": false
+        }
+      ],
+      "contract": {
+        "actions_complete": true,
+        "basis": "fixture_verified",
+        "owners_complete": false,
+        "single_action_per_request": true
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": true,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": true,
+        "order_ok": true,
+        "rule_empty": true,
+        "tcp_failed": true
+      },
+      "query": "q",
+      "requests": [
+        {
+          "connection": "connection-q",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "q",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        },
+        {
+          "connection": "connection-p",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "p",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        }
+      ],
+      "requirement": {
+        "allows_target": false,
+        "applicable": true,
+        "kind": "fixture",
+        "source": "fixture-policy-v3: target successful operation permission"
+      }
+    }
+  },
+  "sealed-19": {
+    "canonical_input_sha256": "0ad54a3c99f82897f4a4520176a3b468fa63bbfa8a382d0a6c6c5d79ab03d876",
+    "expected": {
+      "authorization": "UNKNOWN",
+      "effect": "NO_TARGET_ACTION",
+      "may_success": false,
+      "must_success": false,
+      "processing": "CONSUMED",
+      "status": "OK"
+    },
+    "frozen_fixture_sha256": "f6a5160124b1b2310c1ac90fa0c5468c9bd1f4800f6d0367b5e572128d894be8",
+    "input": {
+      "actions": [],
+      "contract": {
+        "actions_complete": true,
+        "basis": "fixture_verified",
+        "owners_complete": true,
+        "single_action_per_request": true
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": true,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": true,
+        "order_ok": true,
+        "rule_empty": true,
+        "tcp_failed": true
+      },
+      "query": "q",
+      "requests": [
+        {
+          "connection": "connection-q",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "q",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        },
+        {
+          "connection": "connection-p",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "p",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        },
+        {
+          "connection": "connection-r",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "r",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        }
+      ],
+      "requirement": {
+        "allows_target": false,
+        "applicable": false,
+        "kind": "unknown",
+        "source": "fixture-policy-v3: target successful operation permission"
+      }
+    }
+  },
+  "sealed-20": {
+    "canonical_input_sha256": "f673ce56ed375471a2720bdfc87deed704a76b9c63ea58af2776853ef32fdae9",
+    "expected": {
+      "authorization": "CONFLICT",
+      "effect": "CONFLICT",
+      "may_success": null,
+      "must_success": null,
+      "processing": "CONFLICT",
+      "status": "CONFLICT"
+    },
+    "frozen_fixture_sha256": "3535f2684f2e4d49309bcc59eb9c994c91a3cc5e22915c3cfe646018a3a15593",
+    "input": {
+      "actions": [
+        {
+          "candidates": [],
+          "coarse_candidates": [
+            "q",
+            "p"
+          ],
+          "hard_parent": false,
+          "id": "a",
+          "resource": "svc-main",
+          "success": true
+        }
+      ],
+      "contract": {
+        "actions_complete": true,
+        "basis": "fixture_verified",
+        "owners_complete": true,
+        "single_action_per_request": true
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": true,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": true,
+        "order_ok": true,
+        "rule_empty": true,
+        "tcp_failed": true
+      },
+      "query": "q",
+      "requests": [
+        {
+          "connection": "connection-q",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "q",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        },
+        {
+          "connection": "connection-p",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "p",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        }
+      ],
+      "requirement": {
+        "allows_target": false,
+        "applicable": true,
+        "kind": "fixture",
+        "source": "fixture-policy-v3: target successful operation permission"
+      }
+    }
+  },
+  "sealed-21": {
+    "canonical_input_sha256": "ade605e2d0fec7e7244487b1a82196a9eeb42e9689e57f2db705be8637d15af9",
+    "expected": {
+      "authorization": "DEVIATES",
+      "effect": "REOPENED",
+      "may_success": true,
+      "must_success": true,
+      "processing": "CONSUMED",
+      "status": "OK"
+    },
+    "frozen_fixture_sha256": "c59a1339da8abd8eec91e9ee8c7a55ad358b38a8719bd7443ce809dd6d56a326",
+    "input": {
+      "actions": [
+        {
+          "candidates": [
+            "p",
+            "r"
+          ],
+          "coarse_candidates": [
+            "q",
+            "p",
+            "r",
+            "s"
+          ],
+          "hard_parent": false,
+          "id": "a",
+          "resource": "svc-main",
+          "success": false
+        },
+        {
+          "candidates": [
+            "p",
+            "r"
+          ],
+          "coarse_candidates": [
+            "q",
+            "p",
+            "r",
+            "s"
+          ],
+          "hard_parent": false,
+          "id": "b",
+          "resource": "svc-main",
+          "success": false
+        },
+        {
+          "candidates": [
+            "p",
+            "r",
+            "s"
+          ],
+          "coarse_candidates": [
+            "q",
+            "p",
+            "r",
+            "s"
+          ],
+          "hard_parent": false,
+          "id": "c",
+          "resource": "svc-main",
+          "success": false
+        },
+        {
+          "candidates": [
+            "q",
+            "p",
+            "r",
+            "s"
+          ],
+          "coarse_candidates": [
+            "q",
+            "p",
+            "r",
+            "s"
+          ],
+          "hard_parent": false,
+          "id": "d",
+          "resource": "svc-main",
+          "success": true
+        }
+      ],
+      "contract": {
+        "actions_complete": true,
+        "basis": "fixture_verified",
+        "owners_complete": true,
+        "single_action_per_request": true
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": true,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": true,
+        "order_ok": true,
+        "rule_empty": true,
+        "tcp_failed": true
+      },
+      "query": "q",
+      "requests": [
+        {
+          "connection": "connection-q",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "q",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        },
+        {
+          "connection": "connection-p",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "p",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        },
+        {
+          "connection": "connection-r",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "r",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        },
+        {
+          "connection": "connection-s",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "s",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        }
+      ],
+      "requirement": {
+        "allows_target": false,
+        "applicable": true,
+        "kind": "fixture",
+        "source": "fixture-policy-v3: target successful operation permission"
+      }
+    }
+  },
+  "sealed-22": {
+    "canonical_input_sha256": "8036872719443919c52cda984afa8ba185a3344058bf18c7e11e8854f2393c8d",
+    "expected": {
+      "authorization": "CONFORMS",
+      "effect": "ACTION_ONLY",
+      "may_success": true,
+      "must_success": true,
+      "processing": "CONSUMED",
+      "status": "OK"
+    },
+    "frozen_fixture_sha256": "b8035d6d1a2e3e6ec4697ab069ae1895913013435a10b420136b43d291efdac9",
+    "input": {
+      "actions": [
+        {
+          "candidates": [
+            "q",
+            "p"
+          ],
+          "coarse_candidates": [
+            "q",
+            "p",
+            "r"
+          ],
+          "hard_parent": false,
+          "id": "a",
+          "resource": "svc-main",
+          "success": true
+        },
+        {
+          "candidates": [
+            "p",
+            "r"
+          ],
+          "coarse_candidates": [
+            "q",
+            "p",
+            "r"
+          ],
+          "hard_parent": false,
+          "id": "b",
+          "resource": "svc-main",
+          "success": true
+        },
+        {
+          "candidates": [
+            "q",
+            "r"
+          ],
+          "coarse_candidates": [
+            "q",
+            "p",
+            "r"
+          ],
+          "hard_parent": false,
+          "id": "c",
+          "resource": "svc-main",
+          "success": true
+        }
+      ],
+      "contract": {
+        "actions_complete": true,
+        "basis": "fixture_verified",
+        "owners_complete": true,
+        "single_action_per_request": true
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": true,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": true,
+        "order_ok": true,
+        "rule_empty": true,
+        "tcp_failed": true
+      },
+      "query": "q",
+      "requests": [
+        {
+          "connection": "connection-q",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "q",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        },
+        {
+          "connection": "connection-p",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "p",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        },
+        {
+          "connection": "connection-r",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "r",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        }
+      ],
+      "requirement": {
+        "allows_target": true,
+        "applicable": true,
+        "kind": "fixture",
+        "source": "fixture-policy-v3: target successful operation permission"
+      }
+    }
+  },
+  "sealed-23": {
+    "canonical_input_sha256": "08a765b98b0c3ba6d2813e0eb550ed5373bc8f8678e08734b2641da0acb89869",
+    "expected": {
+      "authorization": "UNKNOWN",
+      "effect": "UNKNOWN",
+      "may_success": true,
+      "must_success": false,
+      "processing": "CONSUMED",
+      "status": "OK"
+    },
+    "frozen_fixture_sha256": "67a4436d4243ad734cadeeae8d3d7ac9fbec8d785ea6780ef8a0f87666d74656",
+    "input": {
+      "actions": [
+        {
+          "candidates": [
+            "q",
+            "p",
+            "r",
+            "s"
+          ],
+          "coarse_candidates": [
+            "q",
+            "p",
+            "r",
+            "s"
+          ],
+          "hard_parent": false,
+          "id": "a",
+          "resource": "svc-main",
+          "success": true
+        },
+        {
+          "candidates": [
+            "q",
+            "p",
+            "r",
+            "s"
+          ],
+          "coarse_candidates": [
+            "q",
+            "p",
+            "r",
+            "s"
+          ],
+          "hard_parent": false,
+          "id": "b",
+          "resource": "svc-main",
+          "success": true
+        }
+      ],
+      "contract": {
+        "actions_complete": true,
+        "basis": "fixture_verified",
+        "owners_complete": true,
+        "single_action_per_request": true
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": true,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": true,
+        "order_ok": true,
+        "rule_empty": true,
+        "tcp_failed": true
+      },
+      "query": "q",
+      "requests": [
+        {
+          "connection": "connection-q",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "q",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        },
+        {
+          "connection": "connection-p",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "p",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        },
+        {
+          "connection": "connection-r",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "r",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        },
+        {
+          "connection": "connection-s",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "s",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        }
+      ],
+      "requirement": {
+        "allows_target": false,
+        "applicable": true,
+        "kind": "fixture",
+        "source": "fixture-policy-v3: target successful operation permission"
+      }
+    }
+  },
+  "sealed-24": {
+    "canonical_input_sha256": "7137ffcb5600aebc6ddcb7d7336c27fb10c4accee2655dae37083d51e762a765",
+    "expected": {
+      "authorization": "CONFLICT",
+      "effect": "CONFLICT",
+      "may_success": null,
+      "must_success": null,
+      "processing": "CONFLICT",
+      "status": "CONFLICT"
+    },
+    "frozen_fixture_sha256": "be551897c75e174792d492fa709d04ebcf4600b0ea71f6c1c8e7cb1e1195a78e",
+    "input": {
+      "actions": [
+        {
+          "candidates": [
+            "q",
+            "p"
+          ],
+          "coarse_candidates": [
+            "q",
+            "p"
+          ],
+          "hard_parent": false,
+          "id": "a",
+          "resource": "svc-main",
+          "success": true
+        },
+        {
+          "candidates": [
+            "q",
+            "p"
+          ],
+          "coarse_candidates": [
+            "q",
+            "p"
+          ],
+          "hard_parent": false,
+          "id": "b",
+          "resource": "svc-main",
+          "success": true
+        },
+        {
+          "candidates": [
+            "q",
+            "p"
+          ],
+          "coarse_candidates": [
+            "q",
+            "p"
+          ],
+          "hard_parent": false,
+          "id": "c",
+          "resource": "svc-main",
+          "success": true
+        }
+      ],
+      "contract": {
+        "actions_complete": true,
+        "basis": "fixture_verified",
+        "owners_complete": true,
+        "single_action_per_request": true
+      },
+      "post": {
+        "http_ok": true,
+        "new_tcp": true,
+        "order_ok": true
+      },
+      "pre": {
+        "health_ok": true,
+        "order_ok": true,
+        "rule_empty": true,
+        "tcp_failed": true
+      },
+      "query": "q",
+      "requests": [
+        {
+          "connection": "connection-q",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "q",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        },
+        {
+          "connection": "connection-p",
+          "content_hash": "sha256:captured-bytes-A",
+          "id": "p",
+          "processing": "CONSUMED",
+          "resource": "svc-main",
+          "wire_tx": "reused-wire-tx-17"
+        }
+      ],
+      "requirement": {
+        "allows_target": false,
+        "applicable": true,
+        "kind": "fixture",
+        "source": "fixture-policy-v3: target successful operation permission"
+      }
+    }
+  }
+}

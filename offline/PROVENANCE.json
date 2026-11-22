@@ -1,0 +1,39 @@
+{
+  "offline/fixed/baseline.py": {
+    "relationship": "unchanged bytes",
+    "sha256": "879694d8b12c99fb7b9b837cea6eaf57c603ec5d12397cc436c48a00e3f2a6b1"
+  },
+  "offline/fixed/cases.json": {
+    "relationship": "public solver projection of each of the 24 sealed base graphs and recorded reference signature",
+    "source_results_sha256": "1ef8c18b6882e68ebc68af385cf3aba65fd718f9947301ee93d36d67b6af4123"
+  },
+  "offline/fixed/fixture_reference.py": {
+    "relationship": "unchanged bytes",
+    "sha256": "20714f02c70b1bf579e2bcbe886119fcbd583a64678cd07946169a5bd8b6d699"
+  },
+  "offline/fixed/method.py": {
+    "relationship": "unchanged bytes",
+    "sha256": "27c98ec91f38c9e25adf0eabb1bf1288c5bd49823333d5bd153a7e14a6e58b8d"
+  },
+  "offline/prospective/b3.py": {
+    "relationship": "original FIELDS, STATES, terminal and solve definitions only",
+    "source_sha256": "c51303c36d3663e53d982a3ba1987c07587e3b3a7766cf0d2941a78ec0e6838d"
+  },
+  "offline/prospective/baseline.py": {
+    "relationship": "unchanged bytes",
+    "sha256": "1127da513780e0cfc946958f03383c0fb2b434598b357388fa016ad28615941e"
+  },
+  "offline/prospective/cases.json": {
+    "relationship": "frozen prospective graph inputs and revealed six-field verdicts",
+    "revealed_reference_sha256": "c0edf2a8f00a8a18da6db6253558bcc9ae92c99b1a1fea9b49d6988bc3c0b9d3",
+    "source_freeze_sha256": "276e5200bb1f5f460c9321e9892bf566b0d3cfa988dd913307f8bf3b8cf16deb"
+  },
+  "offline/prospective/fixture_reference.py": {
+    "relationship": "unchanged bytes",
+    "sha256": "59050b1afa7fb87003b16aba9ecc4cdf771fc5fb3866ee95389fef11bf316577"
+  },
+  "offline/prospective/method.py": {
+    "relationship": "unchanged bytes",
+    "sha256": "27c98ec91f38c9e25adf0eabb1bf1288c5bd49823333d5bd153a7e14a6e58b8d"
+  }
+}

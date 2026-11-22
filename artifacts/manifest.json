@@ -1,0 +1,154 @@
+{
+  "materials": {
+    "figure-rebuild": {
+      "archive": "project's private local evidence index, same material ID",
+      "included_files": [],
+      "manuscript_anchor": "Figures 8, 9, and 11–13, Appendix E",
+      "scope": "Frozen figure-generation inputs and sources"
+    },
+    "hall-certificates": {
+      "archive": "project's private local evidence index, same material ID",
+      "included_files": [],
+      "manuscript_anchor": "Figure 9, Table 9, Appendix C",
+      "scope": "Hall deficits in selected finite candidate graphs"
+    },
+    "historical-package": {
+      "archive": "project's private local evidence index, same material ID",
+      "included_files": [],
+      "manuscript_anchor": "Figure 10, Appendix D",
+      "scope": "Archived diagnostic records"
+    },
+    "model-verification": {
+      "archive": "project's private local evidence index, same material ID",
+      "included_files": [],
+      "manuscript_anchor": "Section 4, Appendix E",
+      "scope": "Finite-input checks and premise controls"
+    },
+    "native-c4-recheck": {
+      "archive": "project's private local evidence index, same material ID",
+      "included_files": [],
+      "manuscript_anchor": "Section 4, Figure 8, Appendix B",
+      "scope": "Separate C4 rechecks"
+    },
+    "native-formal": {
+      "archive": "project's private local evidence index, same material ID",
+      "included_files": [],
+      "manuscript_anchor": "Section 4, Figure 8, Appendix B",
+      "scope": "Formal native cohort and paired views"
+    },
+    "native-initial": {
+      "archive": "project's private local evidence index, same material ID",
+      "included_files": [],
+      "manuscript_anchor": "Section 4, Appendix B",
+      "scope": "Initial native windows and eligibility records"
+    },
+    "native-pilot": {
+      "archive": "project's private local evidence index, same material ID",
+      "included_files": [],
+      "manuscript_anchor": "Section 4, Figure 3, Appendix B",
+      "scope": "Separate engineering pilot"
+    },
+    "network-performance": {
+      "archive": "project's private local evidence index, same material ID",
+      "included_files": [],
+      "manuscript_anchor": "Section 4, Figures 11–12, Appendix E",
+      "scope": "Network collection cost in randomized blocks"
+    },
+    "offline-performance": {
+      "archive": "project's private local evidence index, same material ID",
+      "included_files": [],
+      "manuscript_anchor": "Section 4, Figure 13, Appendix E",
+      "scope": "Separate fresh-process overhead cohort"
+    },
+    "regression-fixed": {
+      "archive": "project's private local evidence index, same material ID",
+      "included_files": [
+        "offline/fixed/cases.json"
+      ],
+      "manuscript_anchor": "Section 4, Figure 9, Appendix C",
+      "scope": "Sealed fixed-regression base graphs"
+    },
+    "solver-native": {
+      "archive": "project's private local evidence index, same material ID",
+      "included_files": [],
+      "manuscript_anchor": "Sections 3 and 4, Appendix A",
+      "scope": "Native observation adapter and follow-up decision implementation"
+    },
+    "solver-regression": {
+      "archive": "project's private local evidence index, same material ID",
+      "included_files": [
+        "offline/fixed/method.py",
+        "offline/fixed/baseline.py",
+        "offline/fixed/fixture_reference.py"
+      ],
+      "manuscript_anchor": "Sections 3 and 4, Appendix A",
+      "scope": "Fixed-regression decision implementation"
+    },
+    "supplement-audit": {
+      "archive": "project's private local evidence index, same material ID",
+      "included_files": [],
+      "manuscript_anchor": "Appendix D",
+      "scope": "Supplemental checks on archived DRG observations"
+    },
+    "synthetic-holdout": {
+      "archive": "project's private local evidence index, same material ID",
+      "included_files": [
+        "offline/prospective/cases.json",
+        "offline/prospective/method.py",
+        "offline/prospective/baseline.py",
+        "offline/prospective/fixture_reference.py",
+        "offline/prospective/b3.py"
+      ],
+      "manuscript_anchor": "Section 4, Figure 9, Appendix C",
+      "scope": "Prospective sealed graph cohort"
+    }
+  },
+  "portable_file_fingerprints": {
+    "offline/PROVENANCE.json": {
+      "bytes": 1770,
+      "sha256": "e7910037e223ba48c69775151f0c3bccb91f5aee002f80b3cdc363c5c96235e6"
+    },
+    "offline/fixed/baseline.py": {
+      "bytes": 23694,
+      "sha256": "879694d8b12c99fb7b9b837cea6eaf57c603ec5d12397cc436c48a00e3f2a6b1"
+    },
+    "offline/fixed/cases.json": {
+      "bytes": 57661,
+      "sha256": "a7c961982a6d6528249fb9bd9419c4865653281df5c31189441ff77e4cf14a29"
+    },
+    "offline/fixed/fixture_reference.py": {
+      "bytes": 46041,
+      "sha256": "20714f02c70b1bf579e2bcbe886119fcbd583a64678cd07946169a5bd8b6d699"
+    },
+    "offline/fixed/method.py": {
+      "bytes": 6911,
+      "sha256": "27c98ec91f38c9e25adf0eabb1bf1288c5bd49823333d5bd153a7e14a6e58b8d"
+    },
+    "offline/prospective/b3.py": {
+      "bytes": 4037,
+      "sha256": "ccf466bcc411484b6a0dde8ff6e0ccb8eb1a3cf9df17578eac4942c45b513285"
+    },
+    "offline/prospective/baseline.py": {
+      "bytes": 23742,
+      "sha256": "1127da513780e0cfc946958f03383c0fb2b434598b357388fa016ad28615941e"
+    },
+    "offline/prospective/cases.json": {
+      "bytes": 92089,
+      "sha256": "7350150fc08401386f68e075ebf3ae14e1d6271063fd99f97c881aa2a98077db"
+    },
+    "offline/prospective/fixture_reference.py": {
+      "bytes": 46066,
+      "sha256": "59050b1afa7fb87003b16aba9ecc4cdf771fc5fb3866ee95389fef11bf316577"
+    },
+    "offline/prospective/method.py": {
+      "bytes": 6911,
+      "sha256": "27c98ec91f38c9e25adf0eabb1bf1288c5bd49823333d5bd153a7e14a6e58b8d"
+    },
+    "offline/verify.py": {
+      "bytes": 3338,
+      "sha256": "2c43819f135b9c352973160ec0358bac035cdc7a59ad6a97bcd3b510db84be2f"
+    }
+  },
+  "schema_version": 1,
+  "scope": "Private collaboration copy with portable synthetic graph checks"
+}

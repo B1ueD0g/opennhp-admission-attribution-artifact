@@ -1,0 +1,24 @@
+\documentclass[a4paper,fleqn]{cas-dc}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage{xurl}
+\usepackage{microtype}
+\setlength{\emergencystretch}{1em}
+\ExplSyntaxOn
+\cs_set:Npn \__first_footerline: { \small \itshape Manuscript~draft }
+\ExplSyntaxOff
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\begin{document}
+\let\WriteBookmarks\relax
+\input{frontmatter}
+% Suppress the empty ORCID footnote while author information is pending.
+\let\printorcid\relax
+\maketitle
+\input{front-body}
+\input{method}
+\input{experiments}
+\input{back-body}
+% CRediT, funding, conflicts, acknowledgments and publication notes are pending.
+\input{references}
+\input{appendix}
+\end{document}
