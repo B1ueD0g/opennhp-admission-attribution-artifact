@@ -12,7 +12,7 @@ The Agent sends a knock (KNK, step~1). NHP-Server verifies the message and invok
 
 \begin{figure*}[t]
 \centering
-\includegraphics[width=\textwidth]{figures/fig1.pdf}
+\includegraphics[width=\textwidth]{fig1.pdf}
 \caption{Temporary admission in OpenNHP. (1) The Agent sends a knock. (2) The Server asks the AC to open access. (3) The AC installs a short-lived rule. (4) The application client opens a new TCP connection. (5) The kernel forwards matching traffic to the protected service.}
 \label{fig:1}
 \end{figure*}
@@ -31,13 +31,13 @@ The observation boundary covers requests and actions relevant to the same resour
 We use the observations to construct a bipartite graph of candidate associations. Feasibility queries then determine whether the target's success is necessary or possible without enumerating all compatible explanations. Figure~\ref{fig:2} illustrates this with complete request records. Two requests, $q$ and $u$, are the only possible sources of two known successful bundles. Each request can account for at most one bundle. Both assignments are feasible, and each gives $q$ a successful action. The target's outcome is therefore determinate even though either bundle could belong to it.
 
 \paragraph{1. Construct the candidate graph.}
-For a target request $q$, resource $r$ and observation window $W$, receive, rejection and application-processing events provide the request set $Q$. Execution records provide the set $A$ of action bundles. Each bundle $a$ has a resource, a candidate source domain $D(a)$ and an outcome $s_a\in\{1,0,?\}$ denoting success, no success or an unknown result. For example, the related rule commands arising from one AOP form one bundle. For native KNK, a successful bundle requires a completed AC write, success on every expected rule command, a successful ART, and a consistent terminal status at the Server. We record no success only for an explicitly failed write with no successful rule addition. An incomplete outcome chain remains unknown. If only part of a bundle succeeds, the run is separately flagged as a collection anomaly and handled by the inclusion criteria.
+For a target request $q$, resource $r$ and observation window $W$, receive, rejection and application-processing events provide the request set $Q$. Execution records provide the set $A$ of action bundles. Each bundle $a$ has a resource, a candidate source domain $D(a)$ and an outcome $s_a\in\{1,0,?\}$ denoting success, no success or an unknown result. For example, the related rule commands arising from one AOP form one bundle. For native KNK, a successful bundle requires a completed AC write, successful execution of every expected rule command, a successful ART, and a consistent terminal status at the Server. We record an action bundle as unsuccessful only if the write explicitly failed and no rule was added successfully. An incomplete outcome chain remains unknown. If only part of a bundle succeeds, the run is separately flagged as a collection anomaly and handled by the inclusion criteria.
 
 The graph places bundles on one side and requests on the other. An edge requires agreement on the resource and compatibility with the connection, transaction and bounded processing interval. The edge identifies a possible source. A verified unique link along the execution chain fixes the source. If only the processing interval identifies a single candidate, source attribution also requires request coverage. A request is excluded as a source only when a recorded rejection occurred at a receive checkpoint capable of preventing the modeled operation. A backend error after application processing began is assessed from the processing and action records. If a verified explicit link uniquely identifies a request that was rejected at the relevant checkpoint, the evidence conflicts. Edges restrict possible sources, and outcome labels restrict possible effects. Step~1 of Fig.~\ref{fig:2} encodes both constraints. Step~2 asks whether all bundles can be assigned under those constraints.
 
 \begin{figure*}[t]
 \centering
-\includegraphics[width=\textwidth]{figures/fig2.pdf}
+\includegraphics[width=\textwidth]{fig2.pdf}
 \caption{Two-stage attribution for a recorded target with known processing status. Candidate associations (1) and feasibility queries (2) determine target success (3). A competing write to the same resource limits the example to \texttt{ACTION\_ONLY} at the admission check (4). The bottom row shows how an unrecorded action can witness possible success.}
 \label{fig:2}
 \end{figure*}
@@ -82,11 +82,11 @@ The forced-edge query asks whether the target can have a successful action. Forc
 \paragraph{3. Determine the target-action outcome.}
 Necessary success triggers the resource check. If explanations with and without success are both feasible, the effect remains unknown. If no successful explanation exists, the target has no successful action. The solver retains the corresponding witness, counterexplanation or observation gap. In Fig.~\ref{fig:2}, deleting all known-success edges to the target leaves both bundles competing for the other request's single slot, proving necessary success. Hall's condition provides a check on such a capacity deficit: if a subset $S$ of bundles has a candidate neighborhood $N(S)$ with $|N(S)|<|S|$, no assignment can cover all bundles in $S$~\citep{r41}.
 
-Singleton propagation fixes individual assignments. A global feasibility query can determine the target outcome even when individual assignments remain interchangeable. With complete request records, propagation can assign a singleton bundle, consume its request's capacity and thereby resolve other bundles, as in the upper row of Fig.~\ref{fig:3}. In the lower row, both known successful bundles have the same two candidate requests and there are no external sources. Their assignments can be exchanged, but unit capacity gives each request a success in every assignment. In the figure, M is our global query, B1 is local propagation, B2 is exact enumeration and B3 is a minimum-cost flow method. Section~\ref{sec:setup} describes the comparison.
+Singleton propagation fixes individual assignments. A global feasibility query can determine the target outcome even when individual assignments remain interchangeable. With complete request records, propagation can assign a bundle with only one candidate source, use that request's capacity, and thereby resolve other bundles, as in the upper row of Fig.~\ref{fig:3}. In the lower row, both known successful bundles have the same two candidate requests and there are no external sources. Their assignments can be exchanged, but unit capacity gives each request a success in every assignment. In the figure, M is our global query, B1 is local propagation, B2 is exact enumeration and B3 is a minimum-cost flow method. Section~\ref{sec:setup} describes the comparison.
 
 \begin{figure*}[t]
 \centering
-\includegraphics[width=\textwidth]{figures/fig3.pdf}
+\includegraphics[width=\textwidth]{fig3.pdf}
 \caption{Candidate structure and target outcome. Both the formal synchronized C5P windows (Formal C5P) and the separate engineering pilot (Pilot C5P) contain competing writes. Columns (1)--(3) show candidate sources, feasible assignments, and the verdicts of local propagation (B1) and global queries (M). ``Action only'' denotes \texttt{ACTION\_ONLY}.}
 \label{fig:3}
 \end{figure*}

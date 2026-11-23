@@ -1,9 +1,39 @@
 \shorttitle{Attributing Temporary Network Admission in OpenNHP}
-\shortauthors{}
+\shortauthors{Bu et al.}
+\AddToHook{cmd/maketitle/after}{%
+  \hypersetup{%
+    pdfauthor={Songbo Bu, Zhizhong Tan, Mudi Xu, Benfeng Chen},
+    pdfsubject={Request-level attribution of temporary network admission in OpenNHP},
+    pdfkeywords={Network-Infrastructure Hiding Protocol, temporary network admission, execution attribution, protocol testing, access control}%
+  }%
+}
 \title[mode=title]{Attributing temporary network admission to individual requests in OpenNHP: Method and empirical evaluation}
-% Author names, affiliations, correspondence and ORCID are pending author confirmation.
+\author[1]{Songbo Bu}
+\ead{sbu2@stevens.edu}
+
+\author[2]{Zhizhong Tan}
+\ead{zhizhongtan@163.com}
+
+\author[3]{Mudi Xu}
+\ead{melanxu@c-csa.cn}
+
+\author[4]{Benfeng Chen}
+\cormark[1]
+\ead{03289@zjhu.edu.cn}
+
+\affiliation[1]{organization={Department of Computer Science, Stevens Institute of Technology},
+  city={Hoboken}, state={New Jersey}, country={USA}}
+\affiliation[2]{organization={School of Computer Science and Engineering, Macau University of Science and Technology},
+  city={Macau}, country={China}}
+\affiliation[3]{organization={Cloud Security Alliance Greater China Region},
+  city={Shanghai}, country={China}}
+
+\affiliation[4]{organization={School of Information Engineering, Huzhou University},
+  city={Huzhou}, postcode={313000}, country={China}}
+
+\cortext[cor1]{Corresponding author}
 \begin{abstract}
-A successful application connection after a knock can rely on an earlier admission rule or a rule written by another request. Distinguishing these explanations matters for incident reconstruction and access reviews, especially when the relevant records are incomplete. We present a two-stage method for attributing temporary admission to an individual request. First, a graph encodes candidate associations between requests and action bundles. Queries that remove or force candidate edges determine whether the target request has a successful action in all or some explanations compatible with the observations. We prove that the queries implement these two semantics under the stated observation model. Second, the method checks the resource state before and after the write, verifies a fresh connection, and rules out competing writes to the same resource. Native OpenNHP runs illustrate three distinct outcomes: the request reaches application processing, a rule write succeeds, and new admission is established. On the 24 sealed instances of the fixed regression suite, global queries resolved seven cases left open by local propagation and agreed with exact enumeration on all 24. The additional verdicts arose where per-request capacity constraints excluded alternative explanations. Under light load, full evidence collection increased knock latency by a median paired difference of 0.620 ms. On a separate set of small sealed graphs, the median of block-mean solver times was below 1 ms.
+In zero-trust networks that use knocking, temporary admission separates the access request from the application connection. Admission rules often last only tens of seconds, yet a successful connection can use a rule left by an earlier admission or written by another request. Identifying the responsible request matters for incident reconstruction, investigations of unauthorized access, and access reviews, especially when records are incomplete. We present a two-stage method for attributing temporary admission to an individual request. First, a graph links requests to candidate action bundles. Edge-deletion and forced-edge queries determine whether the target has a successful action in all or some explanations consistent with the observations. We prove that these queries implement the two semantics under the stated observation model. Second, the method checks the resource state before and after the write, verifies a fresh connection, and tests for competing writes to the same resource. Native OpenNHP runs distinguish entry into application processing, a successful rule write, and newly established admission. On 24 sealed regression instances, global queries resolved seven cases left open by local propagation and agreed with exact enumeration on all 24. The additional verdicts arose where per-request capacity excluded alternative explanations. Under light load, full evidence collection increased knock latency by a median paired difference of 0.620 ms. On a separate set of small sealed graphs, the median across block-mean solver times was below 1 ms.
 \end{abstract}
 \begin{keywords}
 Network-Infrastructure Hiding Protocol \sep temporary network admission \sep execution attribution \sep protocol testing \sep access control

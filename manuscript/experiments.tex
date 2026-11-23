@@ -13,9 +13,11 @@ The evaluation addresses four questions. Native runs link requests and rule writ
 
 We use three sources of evidence. Native records test whether the two levels of attribution can be distinguished on the actual execution path. Controlled model inputs isolate the effects of candidate structure, query semantics and model assumptions. Archived traces show how gaps in the evidence constrain a verdict. To assess the contribution of evidence, we hold the run and target fixed and vary what a method can observe. To compare solvers, we fix both the candidate graph and the observation conditions (Fig.~\ref{fig:4}). Online collection and offline analysis have separate cost experiments.
 
+The \href{https://github.com/B1ueD0g/opennhp-admission-attribution-artifact}{GitHub artifact repository} contains the offline verification code and both sealed synthetic suites. The data availability statement describes the scope of the archived records.
+
 \begin{figure*}[t]
 \centering
-\includegraphics[width=\textwidth]{figures/fig4.pdf}
+\includegraphics[width=\textwidth]{fig4.pdf}
 \caption{Paired evaluation on native runs and synthetic instances. The columns show the source, input construction, method comparison, and output check. For native runs, verdicts from paired views of the same run and target are checked against the run-side reference. For synthetic instances, all methods receive the same input, and their verdicts are checked against exact enumeration. B3 participates in the follow-up native and prospective synthetic comparisons.}
 \label{fig:4}
 \end{figure*}
@@ -23,7 +25,9 @@ We use three sources of evidence. Native records test whether the two levels of 
 Table~\ref{tab:3} gives the unit, size and purpose of each cohort. We report inclusion separately for each cohort. A single run can support several target queries and paired views, and multiple methods can analyze the same input.
 
 \paragraph{Native environment and scenarios.}
-The native experiments ran on an aarch64 Lima VM with Alpine 3.23.3, Linux 6.18.7-0-virt and Go 1.26.4 with CGO enabled. We fixed OpenNHP at commit \texttt{40e6b2a9\allowbreak{}e14d4526\allowbreak{}29fa6af2\allowbreak{}55fccbd3\allowbreak{}7bca9807}~\citep{r42}. The Agent and server-side components occupied separate network namespaces connected by a virtual Ethernet pair (veth). Neither namespace had a default route. The Agent used the one-shot Knock API. The Server loaded the \texttt{example} plugin built from the \texttt{basic} example, and the access controller (AC) installed rules through iptables/ipset. Access to the protected service on TCP port 8080 was denied by default. The HTTP management interface was disabled. Each window started with newly created namespaces, processes, rules and services.
+We used an AArch64 Lima VM with Alpine 3.23.3, Linux 6.18.7-0-virt, and Go 1.26.4 (CGO enabled). The tested OpenNHP revision was \nolinkurl{40e6b2a9e14d452629fa6af255fccbd37bca9807}~\citep{r42}. A virtual Ethernet pair (veth) connected the Agent and server-side namespaces. Neither namespace had a default route.
+
+The Agent called the one-shot Knock API. The Server used the \texttt{example} plugin built from \texttt{basic}. The access controller (AC) installed rules using iptables and ipset. The protected service listened on TCP port 8080 with access denied by default. The HTTP management interface was disabled. Each window started with newly created namespaces, processes, rules and services.
 
 The initial scenarios covered first admission (C1), a fresh request after expiry (C2), successive writes from three Agents (C3), and backend authentication after entry into application processing (C4). The formal follow-up comprised three blocks. Each block included one window for each of five scenarios: empty input (C0), C2, C4, and two Agents acting either serially (C5S) or synchronously (C5P). In C5S, the second Agent was released after the first handler completed. In C5P, both Agents shared a release barrier. A window could contain several requests, with paired views constructed for each target query.
 
@@ -32,7 +36,7 @@ The initial scenarios covered first admission (C1), a fresh request after expiry
 \caption{Evaluation cohorts, units of observation and comparison conditions.}
 \label{tab:3}
 \small
-\begin{tabularx}{\textwidth}{@{}p{.17\textwidth}p{.29\textwidth}Xl@{}}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{.17\textwidth}>{\raggedright\arraybackslash}p{.29\textwidth}>{\raggedright\arraybackslash}Xl@{}}
 \toprule
 Cohort & Size and unit & Comparison or purpose & Question \\
 \midrule
@@ -61,18 +65,18 @@ We constructed five observation views of each run to evaluate source constraints
 
 \begin{figure*}[t]
 \centering
-\includegraphics[width=\textwidth]{figures/fig5.pdf}
+\includegraphics[width=\textwidth]{fig5.pdf}
 \caption{Construction of paired views from a single run. Full retains the verified request link. Restricted hides it. Each ablation starts from Restricted and retains existing records. Each solver call receives one view, and the reference verdict is consulted after the call.}
 \label{fig:5}
 \end{figure*}
 
-In the restricted view, a candidate request had to concern the same resource, be handled by the same NHP-Server process, and be within its processing interval when the action bundle's AOP was created. All methods received the same input for a given view. After solving, we checked both the processing state and the execution effect against the run-side reference. That reference retained the explicit request link hidden from the restricted view, together with transactions, peer identities, endpoints, rule readbacks and probe records.
+In the restricted view, a candidate request had to target the same resource and be handled by the same NHP-Server process. The AOP for the bundle had to be created within that request's processing interval. All methods received the same input for a given view. After solving, we checked both the processing state and the execution effect against the run-side reference. That reference retained the explicit request link hidden from the restricted view, together with transactions, peer identities, endpoints, rule readbacks and probe records.
 
 Four observation sources support these views (Fig.~\ref{fig:6}). Captures on veth and lo cover control and application traffic. Process events link requests to execution. Rule readbacks establish rule state, and independent probes check fresh connections and service health. A SYN records an attempted connection. A complete handshake identifies a fresh TCP connection. The connection and unique request identifier associate the GET with its HTTP~200 response~\citep{r43,r44}.
 
 \begin{figure*}[t]
 \centering
-\includegraphics[width=\textwidth]{figures/fig6.pdf}
+\includegraphics[width=\textwidth]{fig6.pdf}
 \caption{Observation points on the native KNK path. E1 captures veth traffic and E2 captures loopback traffic, including health checks. E3 records process events and explicit links. E4 supplies rule readbacks and active probes. Gray lines denote connectivity and teal arrows denote writes or access.}
 \label{fig:6}
 \end{figure*}
@@ -93,7 +97,7 @@ The finite-domain check fixes one resource, one or two requests, and zero to two
 \paragraph{Online collection cost.}
 On a dedicated VM, we independently enabled or disabled event recording (T) and packet capture on both interfaces (C). T0C0, T1C0, T0C1 and T1C1 use identical binaries, plugin and configuration. All four retain the instrumentation call sites, so the contrast measures the increment from enabling collection. The VM had two vCPUs and 4~GiB of memory. Capture requested a 16~MiB buffer per interface. We froze 20 randomized complete blocks, each with one window per condition, for 80 windows. Each window used a separate directory, rebuilt the namespaces, rules and processes, and cleared prior state. No retry replaced a sample. Four preflight windows are reported separately in Appendix~E. The reference for this lightly loaded, single-VM experiment is the same build with collection disabled.
 
-Each window began with an empty rule set, a failed fresh external connection and a healthy service. We then issued one legitimate Knock and timed the API call on the process-local monotonic clock, excluding initialization waits and process exit. The client used fresh TCP connections to retrieve in-memory objects of 64~B, 64~KiB, and 1~MiB. The order of the two larger objects alternated across blocks. We disabled connection reuse and compression and checked status, length and SHA-256. Time to first byte runs from the HTTP call to the first response byte and includes connection establishment. We calculate object goodput as the number of verified response-body bits divided by the time from issuing the request to completing the body read. That interval includes hashing during the read. It therefore measures local short-object completion rate~\citep{r45}. API latency and packet round-trip time were recorded separately~\citep{r46}. For each contrast, we subtracted the reference value from the comparison value within each block, then took the median of the 20 paired differences. We computed descriptive 95\% percentile intervals from 10,000 block resamples without adjusting for multiple comparisons.
+Each window began with an empty rule set, a failed fresh external connection and a healthy service. We then issued one legitimate Knock and timed the API call on the process-local monotonic clock, excluding initialization waits and process exit. The client used fresh TCP connections to retrieve in-memory objects of 64~B, 64~KiB, and 1~MiB. The order of the two larger objects alternated across blocks. We disabled connection reuse and compression and checked status, length and SHA-256. Time to first byte is the elapsed time from the HTTP call to receipt of the first response byte. It includes connection establishment. We calculate object goodput as the number of verified response-body bits divided by the time from issuing the request to completing the body read. That interval includes hashing during the read. It therefore measures local short-object completion rate~\citep{r45}. API latency and packet round-trip time were recorded separately~\citep{r46}. For each contrast, we subtracted the reference value from the comparison value within each block, then took the median of the 20 paired differences. We computed descriptive 95\% percentile intervals from 10,000 block resamples without adjusting for multiple comparisons.
 
 \paragraph{Offline analysis cost.}
 A separate host-side experiment compared M, B1, B2 and B3 on the 24 prospective sealed instances. Five complete blocks were randomized in advance. Every block covered each instance--method pair and every call used a fresh process. The resulting 480 calls recorded solver time, preparation time and total process time separately.
@@ -128,7 +132,7 @@ Both first admission and admission after expiry require evidence that the resour
 
 \begin{figure*}[t]
 \centering
-\includegraphics[width=\textwidth]{figures/fig7.pdf}
+\includegraphics[width=\textwidth]{fig7.pdf}
 \caption{Evidence for new admission in C2-r3. The four stages establish the pre-state, link the target to the write, independently read back the rule and verify access over fresh TCP. Transaction and peer identifiers show their last eight characters. Message spacing indicates order only.}
 \label{fig:7}
 \end{figure*}
@@ -185,7 +189,7 @@ Across the two native cohorts, C4 distinguishes application processing from acti
 Overlapping candidates can leave the target outcome unresolved after local propagation. A global query can add a verdict if capacity constraints resolve that outcome. Once explicit links were hidden in the ten initial queries, each of the nine action bundles still had a single candidate. In the 18 formal native queries, processing intervals did not overlap in serial windows. The three synchronous C5P windows (six queries) did contain overlapping candidates, but each window had a bundle with only one candidate. Propagating its assignment and the remaining capacities determined the other assignments (upper panel of Fig.~\ref{fig:3}). Consequently, M resolved no additional queries over B1 in either native cohort. Figure~\ref{fig:8} shows which formal windows qualified and how each query changed across observation views; the coverage tests are examined under RQ3.
 
 \begin{figure*}[t]\centering
-\includegraphics[width=\textwidth]{figures/fig8.pdf}
+\includegraphics[width=\textwidth]{fig8.pdf}
 \caption{Formal native windows and paired verdicts. (a) Twelve of 15 windows qualified; three independent C4 checks are shown separately. (b) Each row is one query, including three empty C0 inputs. The last three views remove request coverage, action coverage, or evidence of an initially empty rule set. Light amber marks changes from the restricted view.}\label{fig:8}
 \end{figure*}
 
@@ -207,7 +211,7 @@ Two instances illustrate the distinction. In \texttt{sealed-09}, failed actions 
 The prospective suite contained six instances in each of four structural groups. All six additional verdicts arose in the capacity-determined group (Fig.~\ref{fig:9}a). In three, failed actions exhausted competing capacity and the sole successful bundle, together with resource evidence, established admission for the target. In the other three, exchangeable successful writes established action only. All four methods agreed on execution effects for the remaining 18 instances (Fig.~\ref{fig:9}b). Across the initial 96 calls, M, B2 and B3 agreed on run status, processing status, effect, authorization mapping and the values of \textit{must} and \textit{may} where applicable. Their effects matched the sealed reference on 24/24 instances, compared with 18/24 for B1. Figure~\ref{fig:9}c distinguishes this cohort from fixed regression.
 
 \begin{figure*}[t]\centering
-\includegraphics[width=\textwidth]{figures/fig9.pdf}
+\includegraphics[width=\textwidth]{fig9.pdf}
 \caption{Additional verdicts under global capacity constraints. (a) Six capacity-determined cases, split between a single successful bundle and exchangeable successes, with exact baselines. (b) The other 18 prospective instances. (c) Transitions from B1's unresolved verdicts in two separate suites of 24.}\label{fig:9}
 \end{figure*}
 
@@ -230,13 +234,13 @@ A control using only subsequent HTTP reachability matched B2 on 13/24 effects. I
 \paragraph{Archival observations.} The ablations show how a missing observation changes a verdict. The archived runs illustrate how those gaps arise in recorded evidence. For K02 and K04 the receiver recorded rejections at the flood and replay checks, respectively. Both subsequent HTTP 200 responses were consistent with earlier admission. K03 reached application processing, but its records did not independently establish an empty pre-state. Figure~\ref{fig:10} separates the receiver checkpoint from the independent probe in each of six scenarios.
 
 \begin{figure*}[t]\centering
-\includegraphics[width=\textwidth]{figures/fig10.pdf}
+\includegraphics[width=\textwidth]{fig10.pdf}
 \caption{Archived KNK receiver checkpoints and independent HTTP probes. Filled and open circles denote reached and unreached stages; a cross marks the first rejection. ``Consumed'' denotes application processing. A prior admission can explain 200*; 000 denotes no HTTP response. Each scenario had three engineering repeats.}\label{fig:10}
 \end{figure*}
 
 R02 contained evidence of an empty rule set, a failed external probe while the service was healthy, subsequent application processing, an AC log entry reporting a successful rule addition and a fresh connection that received HTTP 200. It lacked independent post-state rule readback and verified coverage of competing initiators. The R03 records likewise did not establish that the request was freshly generated after expiry: the two observations of packet B referred to the same captured packet, and the distinct packet C in the supplement had already reached application processing. The independent C2 cohort in Section~4.2.1 established request generation after confirmed expiry.
 
-Across 16 incomplete archival inputs, M and B1 agreed: processing and effect remained unresolved for seven DRG inputs; five KNK inputs reached application processing with unresolved effect; and four KNK inputs were explicitly rejected with no successful target action. Authorization remained unresolved in all 16. B2 agreed on the 15 inputs it completed; one reached its enumeration cap (Fig.~S1). In receiver-side negative controls, K05 was rejected by the peer check and K06 by authenticated decryption; neither yielded an HTTP response. All scenarios had three repeats on the same deployment; K04 and K05 used corrected valid sequences. Appendix~D gives the cross-interface archival evidence and the policy sources used to distinguish effects from authorization.
+Across 16 incomplete archival inputs, M and B1 agreed: processing and effect remained unresolved for seven DRG inputs; five KNK inputs reached application processing with unresolved effect; and four KNK inputs were explicitly rejected with no successful target action. Authorization remained unresolved in all 16. B2 agreed on the 15 inputs it completed; one reached its enumeration cap (Fig.~\ref{fig:S1}). In receiver-side negative controls, K05 was rejected by the peer check and K06 by authenticated decryption; neither yielded an HTTP response. All scenarios had three repeats on the same deployment; K04 and K05 used corrected valid sequences. Appendix~D gives the cross-interface archival evidence and the policy sources used to distinguish effects from authorization.
 
 \subsubsection{Online evidence collection and offline analysis costs (RQ4)}\label{sec:cost}
 We separate the cost of obtaining evidence from the cost of interpreting it. Online, we measure the incremental cost of event logging and packet capture. Offline, we distinguish solver time from the wall-clock cost of a fresh process.
@@ -245,21 +249,25 @@ We separate the cost of obtaining evidence from the cost of interpreting it. Onl
 
 Figures~\ref{fig:11} and~\ref{fig:12} use the same four contrasts. Events only, Capture only, and Full collection compare T1C0, T0C1, and T1C1, respectively, with T0C0. Events with capture compares T1C1 with T0C1, isolating the increment from event logging when capture is already enabled.
 
-With full collection, median paired knock latency increased by 0.620~ms (95\% interval $[0.021,1.613]$~ms). For a 64~B object, the median change in time to first byte was 0.285~ms ($[-0.088,0.561]$~ms). The median paired change in knock latency after enabling event logging was 1.104~ms without capture ($[-0.360,3.587]$~ms) and $-0.177$~ms with capture ($[-0.746,1.465]$~ms). Both intervals include zero, leaving the separate contribution of logging uncertain under these conditions.
+With full collection, the median paired increase in knock latency was 0.620~ms (95\% interval $[0.021,1.613]$~ms). For a 64~B object, the median change in time to first byte was 0.285~ms ($[-0.088,0.561]$~ms). The median paired change in knock latency after enabling event logging was 1.104~ms without capture ($[-0.360,3.587]$~ms) and $-0.177$~ms with capture ($[-0.746,1.465]$~ms). Both intervals include zero, leaving the separate contribution of logging uncertain under these conditions.
 
 \begin{figure*}[t]\centering
-\includegraphics[width=\textwidth]{figures/fig11.pdf}
+\includegraphics[width=\textwidth]{fig11.pdf}
 \caption{Latency under four collection settings on the same build. (a,b) Median of 20 within-block paired differences and 95\% block-resampling intervals. (c,d) Twenty windows per condition; thick segments indicate interquartile ranges and short bars denote medians. T denotes event logging and C denotes capture on both interfaces (0: off; 1: on).}\label{fig:11}
 \end{figure*}
 
 \paragraph{Control traffic, object goodput, and storage.} Figure~\ref{fig:12} reports control traffic per admission, application goodput and the storage required for collection. The byte count measures the admission transaction itself. The paired comparisons on the same build quantify the additional cost of collection. In all 40 capture windows, each admission involved one KNK/ACK exchange and one AOP/ART exchange, with no additional target retransmission or cookie exchange. The four UDP payloads totaled 1,538--1,546~B per admission, or 1,650--1,658~B including IPv4 and UDP headers. Individual payloads measured 352~B (KNK), 414--421~B (ACK), 406--409~B (AOP), and 362--364~B (ART). These totals combine Agent--Server control traffic on the virtual Ethernet interface and Server--AC traffic on loopback, excluding startup registration, HTTP, and link-layer overhead. With full collection, median round-trip times measured on the respective interfaces were 8.98~ms for KNK/ACK and 4.77~ms for AOP/ART. The latter exchange occurs during processing of the former, so the two times are reported separately.
 
 \begin{figure*}[t]\centering
-\includegraphics[width=\textwidth]{figures/fig12.pdf}
+\includegraphics[width=\textwidth]{fig12.pdf}
 \caption{Control traffic, collection storage, and object goodput. (a) Median UDP payload and 28~B of headers across 40 windows; ranges inside the bars describe payloads and end marks indicate ranges of total IP lengths. (b) Event and capture file sizes on a logarithmic KiB scale (20 windows per enabled condition). (c,d) Per-window goodput for two object sizes. (e,f) Median paired differences and 95\% resampling intervals across 20 blocks. Settings and contrast order follow Fig.~\ref{fig:11}. Captures include object traffic.}\label{fig:12}
 \end{figure*}
 
-Median goodput under T0C0 and T1C1 was 876.2 and 627.0~Mbit/s, respectively, for 64~KiB objects and 6.232 and 4.504~Gbit/s for 1~MiB objects. Full collection yielded median paired differences of $-126.3$~Mbit/s ($[-246.0,-3.3]$) and $-1.358$~Gbit/s ($[-2.626,-0.767]$), respectively. For the larger object, capture alone yielded a median paired difference of $-1.384$~Gbit/s ($[-2.313,-0.931]$~Gbit/s). Adding logging to capture yielded a much smaller paired difference, $-0.017$~Gbit/s, with an interval spanning zero ($[-1.215,0.555]$~Gbit/s). The reduction was measurable with capture alone. With full collection, median storage per window was 12.30~KiB for events and 1.075~MiB for both capture files combined. The capture files include control, probe, and object traffic. Panel~(a) reports the control transaction alone.
+For 64~KiB objects, median goodput was 876.2~Mbit/s under T0C0 and 627.0~Mbit/s under T1C1. For 1~MiB objects, the corresponding medians were 6.232 and 4.504~Gbit/s.
+
+For the two object sizes, the paired goodput differences under full collection had medians of $-126.3$~Mbit/s and $-1.358$~Gbit/s. The respective intervals were $[-246.0, -3.3]$ and $[-2.626, -0.767]$ in the same units. For the 1~MiB object, capture alone produced a median paired difference of $-1.384$~Gbit/s. Its interval was $[-2.313, -0.931]$~Gbit/s. Adding event logging to capture produced a median paired difference of $-0.017$~Gbit/s, with an interval from $-1.215$ to $0.555$~Gbit/s.
+
+Under full collection, median storage per window was 12.30~KiB for events and 1.075~MiB for the two capture files combined. Those files include control, probe, and object traffic. Panel~(a) reports the control transaction alone.
 
 \paragraph{Offline analysis.} Global queries test feasibility without enumerating explanations. Their cost depends on the candidate graph, whereas enumeration also depends on how many missing sources, outcomes, and actions the observations admit. In archival input R03-C, each of eight action bundles had only one visible candidate but could also have an external origin. Each outcome was unknown, and a target action might have gone unrecorded. These alternatives yielded $2^8\times2^8\times2=131{,}072$ explanations; B2 reached its cap of 100,000. Counting visible candidates alone therefore understates enumeration cost.
 
@@ -280,7 +288,7 @@ Prospective workload & Implementation counters per instance & M: 1--7 feasibilit
 Figure~\ref{fig:13} reports solver time, preparation time and the duration of each fresh-process call. All 480 fresh-process calls completed within budget; all six output fields matched the first round. Each point is the mean over 24 inputs for one method in one block.
 
 \begin{figure*}[t]\centering
-\includegraphics[width=\textwidth]{figures/fig13.pdf}
+\includegraphics[width=\textwidth]{fig13.pdf}
 \caption{Computation on small sealed graphs. (a) Solver time. (b) Preparation time. (c) Fresh-process wall time, including preparation. Each point is the mean over 24 instances in one block; vertical marks indicate the median of the five block means. Axis scales differ across panels.}\label{fig:13}
 \end{figure*}
 

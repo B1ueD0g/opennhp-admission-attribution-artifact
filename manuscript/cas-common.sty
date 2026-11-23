@@ -383,7 +383,7 @@
         { \textit{Email~address:\c_space_token} }
         { \textit{Email~addresses:\c_space_token} }
       }
-      { \includegraphics[height=8pt]{thumbnails/cas-email.jpeg}\c_space_token } 
+      { \includegraphics[height=8pt]{cas-email.jpeg}\c_space_token } 
       \seq_use:Nn \g_stm_ead_seq { ;~ }
     }
   }
@@ -1518,7 +1518,7 @@
     \dim_gadd:Nn \l_tmpa_dim { \box_dp:N \g_stm_key_box }
     \leftskip .35\textwidth
     \hspace*{-.35 \textwidth }
-    \noindent\hbox_to_wd:nn {  \z@ } { \box \g_stm_key_box } 
+    \noindent\hbox_overlap_right:n { \box \g_stm_key_box } 
     \skip_vertical:n { - \l_tmpa_dim } 
   }
   \noindent \abstractname \par
@@ -1639,6 +1639,10 @@
      \int_compare:nTF { \g_stm_jtype_int > 5 }
        { \stmaddress } 
        { }
+     \group_begin:
+     % CAS prints title notes with literal marks, without a hyperref footnote mark.
+     \cs_if_exist:NT \H@@footnotetext
+       { \cs_set_eq:NN \@footnotetext \H@@footnotetext }
      \printtnotes
      \printnonumnotes
      \bool_if:NTF \g_stm_blind_bool 
@@ -1656,6 +1660,7 @@
          \printlinkedin
          \printfnotes
        } 
+     \group_end:
      \bool_if:NTF \g_stm_longmktitle_bool
        { 
          \if@twocolumn

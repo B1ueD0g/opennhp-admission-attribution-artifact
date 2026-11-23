@@ -6,7 +6,7 @@
 \providecommand{\theHfigurewid}{supp.\arabic{figurewid}}
 \section{Verdict fields and review of conflicts}\label{verdict-fields-and-review-of-conflicts}
 
-The lifecycle fields \path{rule_empty}, \path{tcp_failed}, \path{health_ok}, and \path{order_ok} describe the pre-state. The fields \path{new_tcp}, \path{http_ok}, and \path{order_ok} describe the post-state. Together they implement the seven predicates in Section 3.3. When checking the post-state, the native input adapter includes the rule readback and probe order. It compares the target entry with the write parameters using the saved output. Algorithm 1 first checks the feasibility of the entire graph. It reports invalid input, budget exhaustion, and conflicting evidence separately. The \path{must} and \path{may} fields are inapplicable if the target cannot be located or its processing status is unknown. The artifact entries \path{solver-native} and \path{solver-regression} identify the solver entry points.
+The lifecycle fields \path{rule_empty}, \path{tcp_failed}, \path{health_ok}, and \path{order_ok} describe the pre-state. The fields \path{new_tcp}, \path{http_ok}, and \path{order_ok} describe the post-state. Together they implement the seven predicates in Section~\ref{sec:new-admission}. When checking the post-state, the native input adapter includes the rule readback and probe order. It compares the target entry with the write parameters using the saved output. Algorithm~\ref{alg:attribution} first checks the feasibility of the entire graph. It reports invalid input, budget exhaustion, and conflicting evidence separately. The \path{must} and \path{may} fields are inapplicable if the target cannot be located or its processing status is unknown. The artifact entries \path{solver-native} and \path{solver-regression} identify the solver entry points.
 
 \section{Native records and window eligibility}\label{native-records-and-window-eligibility}
 
@@ -54,13 +54,13 @@ The \path{historical-package} entry locates the review package for the initial a
 
 \subsection{Sparse records and DRG role checks}\label{sparse-records-and-drg-role-checks}
 
-Processing status was unresolved for seven DRG inputs. Five KNK inputs recorded entry into application processing. The execution effect remained unresolved for both groups. The other four KNK inputs recorded explicit rejection and had no successful target action (Figure~\ref{fig:S1}). Exact enumeration reached its budget on one input. Authorization remained unresolved for all 16 inputs.
+Processing status was unresolved for seven DRG inputs. Five KNK inputs recorded entry into application processing. The execution effect remained unresolved for both groups. The other four KNK inputs recorded explicit rejection and had no successful target action (Figure~\ref{fig:S1}). Exact enumeration reached the enumeration cap for one input. Authorization remained unresolved for all 16 inputs.
 
 \begin{figure*}[tbp]
 
 \centering
 
-\includegraphics[width=0.94\textwidth,height=0.67\textheight,keepaspectratio]{figures/figS1.pdf}
+\includegraphics[width=0.94\textwidth,height=0.67\textheight,keepaspectratio]{figS1.pdf}
 
 \caption{Processing status and execution verdicts for inputs with incomplete evidence. Each point denotes one input, and lines link its classifications. The execution effect remained unresolved for seven DRG and five KNK inputs. Four rejected KNK inputs had no successful target action. Authorization and enumeration budget appear separately. ``Cap'' denotes the enumeration limit.}\label{fig:S1}
 
@@ -72,9 +72,9 @@ Figure~\ref{fig:S2} shows the DRG writes and role-check results for the DB and s
 
 \centering
 
-\includegraphics[width=0.94\textwidth,height=0.67\textheight,keepaspectratio]{figures/figS2.pdf}
+\includegraphics[width=0.94\textwidth,height=0.67\textheight,keepaspectratio]{figS2.pdf}
 
-\caption{DRG checkpoints in the initial archived cohort across two builds. O is the static build. G-D includes a local role check before saving. Each item has three engineering repetitions. The records show configuration creation, and the Server send log identifies DAK. The two arms use different builds.}\label{fig:S2}
+\caption{DRG checkpoints in the initial archived cohort across two builds. O is the static build. G-D includes a local role check before saving. Each item was repeated in three engineering runs. The records show configuration creation, and the Server send log identifies DAK. The two arms use different builds.}\label{fig:S2}
 
 \end{figure*}
 
@@ -86,7 +86,7 @@ Figure~\ref{fig:S3} shows the deployment and observation points for archived coh
 
 \centering
 
-\includegraphics[width=0.94\textwidth,height=0.67\textheight,keepaspectratio]{figures/figS3.pdf}
+\includegraphics[width=0.94\textwidth,height=0.67\textheight,keepaspectratio]{figS3.pdf}
 
 \caption{Two-namespace deployment for archived cohort S2. C1 and C2 denote UDP sockets, and external probes used TCP port 80. The lower panel lists the record sources. Figure~\ref{fig:6} shows the TCP port 8080 deployment for the native evaluation.}\label{fig:S3}
 
@@ -94,15 +94,15 @@ Figure~\ref{fig:S3} shows the deployment and observation points for archived coh
 
 \subsection{Rule expiry and application processing of a previously observed packet}\label{rule-expiry-and-application-processing-of-a-previously-observed-packet}
 
-Figure~\ref{fig:S4} aligns the rule snapshots, AC logs, and TCP/HTTP probes from archived case R02 across the initial knock, expiry check, and subsequent observation. An independent readback showed an empty rule set at expiry. After the previously observed packet was received again, the AC log recorded an execution event, and HTTP 200 over a fresh TCP connection confirmed reachability. The post-state lacked an independent rule readback. The archive distinguishes the period advertised in the acknowledgment from the duration in the recorded control messages and the rule state.
+Figure~\ref{fig:S4} aligns the rule snapshots, AC logs, and probes for archived case R02. The records cover the initial knock, the expiry check, and subsequent TCP/HTTP observations. An independent readback showed an empty rule set at expiry. After the previously observed packet was received again, the AC log recorded an execution event, and HTTP 200 over a fresh TCP connection confirmed reachability. The post-state lacked an independent rule readback. The archive distinguishes the period advertised in the acknowledgment from the duration in the recorded control messages and the rule state.
 
 \begin{figure*}[tbp]
 
 \centering
 
-\includegraphics[width=0.94\textwidth,height=0.67\textheight,keepaspectratio]{figures/figS4.pdf}
+\includegraphics[width=0.94\textwidth,height=0.67\textheight,keepaspectratio]{figS4.pdf}
 
-\caption{Rule snapshots and recorded execution in archived case R02. At expiry, the rule set was empty, the external connection received no response, and the service remained healthy. The later AC log recorded success, and the fresh connection yielded HTTP 200. A question mark denotes the missing independent post-state observation (``No rule readback''). Horizontal position indicates event order only.}\label{fig:S4}
+\caption{Rule snapshots and recorded execution in archived case R02. At expiry, the rule set was empty, the external probe received no response, and the service remained healthy. The later AC log recorded success, and the fresh connection yielded HTTP 200. A question mark denotes the missing independent post-state observation (``No rule readback''). Horizontal position indicates event order only.}\label{fig:S4}
 
 \end{figure*}
 
